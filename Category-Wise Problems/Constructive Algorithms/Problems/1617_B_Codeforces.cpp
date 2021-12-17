@@ -61,10 +61,12 @@ For the constructive algorithm approach, first we consider a random variable say
 We also note that remainder of any number divisible by 4 lies in the range of 0 to 3, in other words any number divisible by n has remainder from 0 to n-1.
 Then we follow these steps:
 1) n%2=0 or n%4=2, which means that x=4n+2, it also means that taking a+1+b=n [Here a+1=x and b=2, so a=x-1], and taking b=2, a+2+1=n=> a+3=n => a=n-3 and hence, gcd(n-3,2)=1
-2) n%4=3 which means that x=4n+3, it also means that (x-3)/4=n, in this case gcd(n/2-1,n/2+1)=1 so taking n/2-1+n/2+1+1=1 
-3) n%4=1 which means that x=4n+1, it also means that (x+1)/4=n,  in this case gcd(n/2-2,n/2+2)=1 so taking n/2+2+n/2-2+1=1
+2) n%4=3 which means that x=4n+3, it also means that (x-3)/4=n, in this case gcd(n/2-1,n/2+1)=1 so taking n/2+2+n/2-2+1=1 using the idea that consecutive odd numbers(that differ
+by 2 or 4) has a gcd of 1. But in this case n is an odd number so upon division we get floor division so (n-1)/2 but here (n-1)/2 yields an odd number, so (n-1)/2-2 and (n-1)/2+2 would
+be odd as odd-even=odd, so 2 consecutive odd numbers yield a gcd of 1.
+3) n%4=1 which means that x=4n+1, it also means that (x+1)/4=n,  in this case gcd(n/2-2,n/2+2)=1 so taking n/2-1+n/2+1+1=1 using the same idea that consecutive odd numbers
+have a gcd of 1 as stated in 2, in this case, (n-1)/2 would yield an even number, as n%4=1 and so (n-1) is divible by 4 and hence it can be divided by 2 twice.
 Keeping these in mind we can also implement a solution using constructive algorithm
-
 */
 #include <bits/stdc++.h>
 
