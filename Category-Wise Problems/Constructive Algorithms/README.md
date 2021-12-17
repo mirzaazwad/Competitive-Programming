@@ -1,10 +1,10 @@
-#Constructive Algorithms
-##So what are constructive algorithms?
+# Constructive Algorithms
+## So what are constructive algorithms?
 A brief yet helpful insight on constructive algorithms https://codeforces.com/blog/entry/80317
 So what really is constructive algorithms, basically its the approach to solving problems that has multiple answers in codeforces.  Essentially, it is covers problems which is asking you to find any answer(amongst many possible answers) that satisfies the constraints of the question.
 
-##Some example problems:
-###Hard
+## Some example problems:
+###### Hard
     https://codeforces.com/problemset/problem/74/E
     https://codeforces.com/problemset/problem/23/C
     https://codeforces.com/problemset/problem/1196/F
@@ -13,7 +13,7 @@ So what really is constructive algorithms, basically its the approach to solving
     https://codeforces.com/problemset/problem/468/C
     https://codeforces.com/problemset/problem/1182/D
     https://codeforces.com/problemset/problem/356/D
-###Relatively Easy
+###### Relatively Easy
 
     https://atcoder.jp/contests/agc024/tasks/agc024_b
     https://atcoder.jp/contests/agc032/tasks/agc032_e
