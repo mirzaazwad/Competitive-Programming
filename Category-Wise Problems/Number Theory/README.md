@@ -43,7 +43,7 @@ may be the cause of the TLE's you may be getting in those prime number problems.
 using namespace std;
 
 bool isPrime(int n){
-	for(int i=1;i<n;i++){
+	for(int i=2;i<n;i++){
 		if(n%i==0)return false;
 	}
 	return true;
@@ -54,7 +54,7 @@ int main(){
          }
 ```
 
-So basically this approach is a bit like if there is a number i that can divide n within the range 0<i<n then this is not prime, but this approach is very redundant and unnecessary and can lead one to a TLE or CPU Limit Exceeded. For this we have the sieve of Eratosthenes. The sieve of Eratosthenes is one of the most efficient ways to find all primes smaller than n when n is smaller than 10 million and such. [Again a wikipedia link](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+So basically this approach is a bit like if there is a number i that can divide n within the range 1<i<n then this is not prime, but this approach is very redundant and unnecessary and can lead one to a TLE or CPU Limit Exceeded. For this we have the sieve of Eratosthenes. The sieve of Eratosthenes is one of the most efficient ways to find all primes smaller than n when n is smaller than 10 million and such. [Again a wikipedia link](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
 For a detailed overview, please visit geeks for geeks, basically just [Click HERE!!!](https://www.geeksforgeeks.org/sieve-of-eratosthenes/).
 
 
