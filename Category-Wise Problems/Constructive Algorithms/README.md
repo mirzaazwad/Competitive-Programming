@@ -21,5 +21,6 @@ So what really is constructive algorithms, basically its the approach to solving
 [agc006_b](https://atcoder.jp/contests/agc006/tasks/agc006_b)
 [agc006_e](https://atcoder.jp/contests/agc006/tasks/agc006_e)
 
+The solution to these problems are added to this repository
 More Resources:
 [HKOI Training Camp](https://assets.hkoi.org/training2018/ca.pdf)
