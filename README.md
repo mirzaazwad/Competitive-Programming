@@ -11,3 +11,5 @@ This is the repository where I outline my competitive programming experiences an
 
 [Shahjalal Shohag Bhai's repo in Github, about competitive programming journey](https://github.com/ShahjalalShohag/Competitive-Programming-A-Complete-Guideline)
 
+These resoruces are also the contributions of various individuals who helped shape my CP journey. Especially those at IUT who taught me the basics via the ACM classes.
+
