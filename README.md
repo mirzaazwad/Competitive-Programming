@@ -21,6 +21,6 @@ This is the repository where I outline my competitive programming experiences an
 
 [Junior Training Sheet v7](https://docs.google.com/spreadsheets/d/1iJZWP2nS_OB3kCTjq8L6TrJJ4o-5lhxDOyTaocSYc-k/edit?usp=sharing)
 
-Also look into A2OJ ladders for finding more practice problems sorted by difficulty, just go to google and search, >A2OJ Ladder
+Also look into A2OJ ladders for finding more practice problems sorted by difficulty, just go to google and search, > A2OJ Ladder
 These resoruces are also the contributions of various individuals who helped shape my CP journey. Especially those at IUT who taught me the basics via the ACM classes.
 
