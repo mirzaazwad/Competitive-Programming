@@ -8,11 +8,13 @@ So there are many different ways to represent graphs as discussed here:
 3) [Detailed Mathematical Understanding of Graph Theory and other Discrete Mathematics Topics](https://www.youtube.com/playlist?list=PLDDGPdw7e6Aj0amDsYInT_8p6xTSTGEi2)
 4) Understanding of [recursion](https://youtu.be/ngCos392W4w) A fundamental part of understanding the intricacy of graph theory with respect to competitive programming.
 
-## Representing Graphs Algorithimically
-
 Let's first take a graph:
 
 ![Graph Image](https://github.com/mirzaazwad/Competitive-Programming/blob/main/Category-Wise%20Problems/Graph%20Theory/Implementations/Example%20Graph.png)
+
+## Representing Graphs Algorithimically
+
+
 ```CPP
 #include<bits/stdc++.h>
 using namespace std;
@@ -98,8 +100,57 @@ int main()
 }
 ```
 DFS stands for Depth-First Search, in this case, we traverse the graph or tree from the root node to the tip of another branch before moving on to the next branch. Essentially we keep following edges, going deeper and deeper into the graph, when we reach a node that has no edges to any other nodes, we go back to the previous node and continue the process. Here I implemented it using recursion(Method 1), as recursion can be used as a replacement for stack, instead of recursion a more theoretical approach would be to use a stack(Method 2) to keep track of the exploration track, pushing a node when we explore it and popping a node when we go back. The backtracking strategy explores solutions this way. The recursion approach is more suitable for Competitive Programming.
+For better understanding check the dfs vs bfs comparison at the start of the **DFS vs BFS** section
 
 ## BFS Implementation
+
+```CPP
+#include<bits/stdc++.h>
+using namespace std;
+
+
+bool vis[12]={false};
+vector<int>v[12];
+vector<int>dis(12,-1);
+queue<int>q;
+
+void bfs(int node){
+    q.push(node);
+    vis[node]=true;
+    dis[node]=0;
+    while(!q.empty()){
+        node=q.front();
+        q.pop();
+        for(auto u:v[node]){
+            if(!vis[u]){
+                q.push(u);
+                vis[u]=true;
+                dis[u]=dis[node]+1;
+            }
+        }
+    }
+}
+int main(){
+
+    int a,b;
+    for(int i=0;i<9;i++){
+        cin>>a>>b;
+        v[a].push_back(b);
+        v[b].push_back(a);
+    }
+    bfs(6);
+    for(int i=0;i<12;i++){
+        cout<<i<<" "<<dis[i]<<"\n";
+    }
+}
+```
+
+BFS stands for Breadth First Search, here it explores the neighbouring nodes, level by level before going deeper into the graph. Essentially, it explores graph as per level: first the neigbours of your start node, then its neighbours' neighbours and so on and so forth. To keep track of the nodes we visit, we use a queue. Once we explore a node, we enqueue its children and then dequeue the next node to explore. For better understanding check the dfs vs bfs comparison at the start of the **DFS vs BFS** section
+
+## DFS vs BFS
+
+![DFS vs BFS](https://github.com/mirzaazwad/Competitive-Programming/blob/main/Category-Wise%20Problems/Graph%20Theory/Implementations/DFS%20vs%20BFS.png)
+We notice that bfs and dfs only differ in their use of stacks or queues but how do we understand which one best suits our cause. The DFS approach is simpler to implement and consumes less memory as you only need to store the parent nodes leading to the current node. While in BFS, you have to store the entire frontier of the search process. If you have a graph of millions of nodes, it would not be practical. When you suspect that the node you are searching isn't many levels away from the start, it's usually worth paying the higher cost of bfs, because you are likely to find the node faster. When you need to explore all the nodes of a graph its usually bettter to go for dfs for its simpler implementation and smaller memory footprint.
 
 Understanding the concepts of DFS and BFS: [Click Here](https://youtu.be/pcKY4hjDrxk)
 
