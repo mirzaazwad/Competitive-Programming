@@ -52,6 +52,50 @@ int main()
 
 ## DFS Implementation
 
+Representing DFS Algorithimically
+
+###### Method 1:
+```CPP
+#include <bits/stdc++.h>
+
+#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL)
+
+#define endl "\n"
+
+using namespace std;
+
+bool vis[12];
+vector<int>v[12];
+vector<int>parent(12,-1);
+
+void dfs(int node,int par){
+    vis[node]=true;
+    parent[node]=par;
+    for(auto u:v[node]){
+        if(!vis[u]){
+            dfs(u,node);
+        }
+    }
+}
+
+int main()
+{
+    fastio;
+    int a,b;
+    for(int i=0;i<9;i++){
+        cin>>a>>b;
+        v[a].push_back(b);
+        v[b].push_back(a);
+    }
+    dfs(6,0);
+    for(int i=0;i<12;i++){
+        cout<<i<<" "<<parent[i]<<"\n";
+    }
+    return 0;
+}
+```
+DFS stands for Depth-First Search, in this case, we traverse the graph or tree from the root node to the tip of another branch before moving on to the next branch. Essentially we keep following edges, going deeper and deeper into the graph, when we reach a node that has no edges to any other nodes, we go back to the previous node and continue the process. Here I implemented it using recursion(Method 1), as recursion can be used as a replacement for stack, instead of recursion a more theoretical approach would be to use a stack(Method 2) to keep track of the exploration track, pushing a node when we explore it and popping a node when we go back. The backtracking strategy explores solutions this way. The recursion approach is more suitable for Competitive Programming.
+
 ## BFS Implementation
 
 Understanding the concepts of DFS and BFS: [Click Here](https://youtu.be/pcKY4hjDrxk)
