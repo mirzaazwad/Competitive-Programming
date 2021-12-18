@@ -10,6 +10,9 @@ So there are many different ways to represent graphs as discussed here:
 
 ## Representing Graphs Algorithimically
 
+Let's first take a graph:
+
+[!Graph Image](https://github.com/mirzaazwad/Competitive-Programming/blob/main/Category-Wise%20Problems/Graph%20Theory/Implementations/Example%20Graph.png)
 ```CPP
 #include<bits/stdc++.h>
 using namespace std;
