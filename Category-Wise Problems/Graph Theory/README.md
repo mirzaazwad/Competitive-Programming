@@ -150,6 +150,7 @@ BFS stands for Breadth First Search, here it explores the neighbouring nodes, le
 ## DFS vs BFS
 
 ![DFS vs BFS](https://github.com/mirzaazwad/Competitive-Programming/blob/main/Category-Wise%20Problems/Graph%20Theory/Implementations/DFS%20vs%20BFS.png)
+The Image is from the book Computer Science Distilled by Wladston Ferreira Filho
 
 We notice that bfs and dfs only differ in their use of stacks or queues but how do we understand which one best suits our cause. The DFS approach is simpler to implement and consumes less memory as you only need to store the parent nodes leading to the current node. While in BFS, you have to store the entire frontier of the search process. If you have a graph of millions of nodes, it would not be practical. When you suspect that the node you are searching isn't many levels away from the start, it's usually worth paying the higher cost of bfs, because you are likely to find the node faster. When you need to explore all the nodes of a graph its usually bettter to go for dfs for its simpler implementation and smaller memory footprint.
 
