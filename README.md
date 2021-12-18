@@ -13,5 +13,9 @@ This is the repository where I outline my competitive programming experiences an
 
 [Inishan Repo on Competitive Programming](https://github.com/lnishan/awesome-competitive-programming)
 
+[Competitive Programming Handbook](https://drive.google.com/file/d/1lWrMyp3bNgAebbpVaeOnHOBhjM1HU_JZ/view?usp=sharing)
+
+[Competitive Programming-3](https://drive.google.com/file/d/17FlWGk0NLfIEY21MN-cS-PNj_fGvjSmm/view?usp=sharing)
+
 These resoruces are also the contributions of various individuals who helped shape my CP journey. Especially those at IUT who taught me the basics via the ACM classes.
 
