@@ -102,6 +102,57 @@ int main()
 DFS stands for Depth-First Search, in this case, we traverse the graph or tree from the root node to the tip of another branch before moving on to the next branch. Essentially we keep following edges, going deeper and deeper into the graph, when we reach a node that has no edges to any other nodes, we go back to the previous node and continue the process. Here I implemented it using recursion(Method 1), as recursion can be used as a replacement for stack, instead of recursion a more theoretical approach would be to use a stack(Method 2) to keep track of the exploration track, pushing a node when we explore it and popping a node when we go back. The backtracking strategy explores solutions this way. The recursion approach is more suitable for Competitive Programming.
 For better understanding check the dfs vs bfs comparison at the start of the **DFS vs BFS** section
 
+###### Method 2:
+
+```CPP
+#include <bits/stdc++.h>
+
+#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL)
+
+#define endl "\n"
+
+using namespace std;
+
+bool vis[12];
+vector<int>v[12];
+vector<int>parent(12,-1);
+stack<int>s;
+
+void dfs(int node,int par){
+    vis[node]=true;
+    parent[node]=par;
+    s.push(node);
+    while(!s.empty()){
+        node=s.top();
+        s.pop();
+        for(auto u:v[node]){
+            if(!vis[u]){
+                parent[u]=node;
+                s.push(u);
+                vis[u]=true;
+            }
+        }
+        
+    }  
+}
+
+int main()
+{
+    fastio;
+    int a,b;
+    for(int i=0;i<9;i++){
+        cin>>a>>b;
+        v[a].push_back(b);
+        v[b].push_back(a);
+    }
+    dfs(6,0);
+    for(int i=0;i<12;i++){
+        cout<<i<<" "<<parent[i]<<"\n";
+    }
+    return 0;
+}
+```
+
 ## BFS Implementation
 
 ```CPP
