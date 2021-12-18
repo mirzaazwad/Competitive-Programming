@@ -8,6 +8,48 @@ So there are many different ways to represent graphs as discussed here:
 3) [Detailed Mathematical Understanding of Graph Theory and other Discrete Mathematics Topics](https://www.youtube.com/playlist?list=PLDDGPdw7e6Aj0amDsYInT_8p6xTSTGEi2)
 4) Understanding of [recursion](https://youtu.be/ngCos392W4w) A fundamental part of understanding the intricacy of graph theory.
 
+## Representing Graphs Algorithimically
+
+```CPP
+#include<bits/stdc++.h>
+using namespace std;
+
+int n, m;
+vector<pair<int, int>> edges;//Edge List
+int adjMat[102][102];//Adjacency Matrix
+vector<int> adjL[102];//Adjacency List
+
+vector<pair<int, pair<int, int>>> edges2;//Weighted Edge List
+vector<pair<int, int>> adjL2[102];//Weighted Adjacency List
+
+int main()
+{
+    int i, a, b, w;
+    cin >> n >> m;
+
+    for(i = 0; i < m; i++)
+    {
+        cin >> a >> b;
+        edges.push_back({min(a, b), max(a, b)});
+
+        adjMat[a][b] = 1;
+        adjMat[b][a] = 1;
+
+        adjL[a].push_back(b);
+        adjL[b].push_back(a);
+
+        cin >> w;
+        edges2.push_back({w, {a, b}});
+
+        adjMat[a][b] = w;
+        adjMat[b][a] = w;
+
+        adjL2[a].push_back({w, b});
+        adjL2[b].push_back({w, a});
+    }
+}
+```
+
 ## DFS Implementation
 
 ## BFS Implementation
