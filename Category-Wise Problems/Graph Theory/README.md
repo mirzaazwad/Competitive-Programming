@@ -6,7 +6,7 @@ So there are many different ways to represent graphs as discussed here:
 1) [Graph Theory MIT Playlist](https://www.youtube.com/playlist?list=PL6MpDZWD2gTF3mz26HSufmsIO-COKKb5j)
 2) [Graph Theory from a Computer Science Perspective](https://youtu.be/LFKZLXVO-Dg)
 3) [Detailed Mathematical Understanding of Graph Theory and other Discrete Mathematics Topics](https://www.youtube.com/playlist?list=PLDDGPdw7e6Aj0amDsYInT_8p6xTSTGEi2)
-4) Understanding of [recursion](https://youtu.be/ngCos392W4w) A fundamental part of understanding the intricacy of graph theory.
+4) Understanding of [recursion](https://youtu.be/ngCos392W4w) A fundamental part of understanding the intricacy of graph theory with respect to competitive programming.
 
 ## Representing Graphs Algorithimically
 
@@ -99,6 +99,7 @@ DFS stands for Depth-First Search, in this case, we traverse the graph or tree f
 ## BFS Implementation
 
 Understanding the concepts of DFS and BFS: [Click Here](https://youtu.be/pcKY4hjDrxk)
+Understanding the concepts of How Recursion Can be Used in a similar way to stack: [Click Here](https://youtu.be/ygK0YON10sQ)
 
 Visualising Graphs and Graph traversals. [Click Here](https://csacademy.com/app/graph_editor/)
 
