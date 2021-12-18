@@ -30,7 +30,7 @@
 		"#define rforsn(i,s,e) for(ll i = s; i >= e; i--)",
 		"#define ln \"\\n\"",
 		"#define dbg(x) cout<<#x<<\" = \"<<x<<ln",
-     "#define case cout << \"Case #\" << it << \": \";",",
+     "#define case cout << \"Case #\" << it << \": \";",
 		"#define mp make_pair",
 		"#define pb push_back",
 		"#define fi first",
