@@ -96,6 +96,14 @@ def isPrime(a):
 
 Also this is the python code for the same algorithm.
 
+###### But why do we check till the squres only?
+
+Let's take a number n, if n is not a prime  number, n can be factored into:
+
+> n = a x b
+
+Now a and b can't be both greater than the square root of n, since then the product a * b would be greater than &radic;(n) * &radic;(n) = n. So in any factorization of n, at least one of the factors must be smaller than the square root of n, and if we can't find any factors less than or equal to the square root, n must be a prime.
+
 
 ## Sieve of Eratosthenes
 
