@@ -171,5 +171,51 @@ int main()
 So time for some explanation, in the above methods to determine prime numbers, or making a prime number list we uncovered that checking till
 > i\*i<=n
 
+Now in this method we first set all the numbers to be true using a memset, and then we check from 2 onwards, but why 2? since 2 is the first prime number it is pointless to start from 1. After we start checking from 2, we check whether the number is a prime or is marked prime as initially we marked all the numbers to be prime using the flag and applying memset on it, and then we clarified that 0 and 1 are not prime. Then if the number is a prime, we mark all its multiples using a nested loop from i\*i to N and incrememting the number by itself as in if p is the prime number, then we increment by p or in other words **i+=p**. This marks all the multiples of the prime numbers as not prime as a prime number can have no factor other than itself and 1. In this method we can mark all numbers as  either prime or not prime. This is pretty efficient. Another approach is:
 
-is a more efficient way to determine prime numbers. 
+```CPP
+#include <bits/stdc++.h>
+
+#define fastio                        \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL)
+
+#define endl "\n"
+
+using namespace std;
+
+vector<int>primeList;
+
+void sieve(int n){
+    bool isPrime[n+1];
+    memset(isPrime, false, sizeof(isPrime));
+    isPrime[2]=true;//mark 2 as prime
+
+    for(int i=3;i<=n;i+=2)isPrime[i]=true;//mark 3 and all odd numbers from 3 onwards as prime excluding the even numbers in the process
+    for(int i=3;i*i<=n;i++){
+        if(isPrime[i]){
+            for(int j=i*i;j<=n;j+=2*i)isPrime[j]=false;//this marks all odd multiples as not prime, since the even multiples are already marked as not prime, its not needed
+	    //to repeat the process, thus making the algorithm more efficient.
+        }
+    }
+    for(int i=2;i<=n;i++){
+        if(isPrime[i]){
+            primeList.push_back(i);//pushing all the prime numbers into a list on the basis of the colouring of the list. True means prime and false means not prime
+        }
+    }
+}
+
+int main()
+{
+    fastio;
+    int n;
+    cin>>n;
+    sieve(n);
+    for(int i=0;i<primeList.size();i++){
+        cout<<primeList[i]<<" ";
+    }
+    cout<<endl;
+    return 0;
+}
+```
+This is another approach to create and print a list of prime numbers.
