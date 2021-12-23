@@ -81,7 +81,7 @@ int main(){
 ```
 A brief implementation of an idea. Make sure i starts from 2, it is a common mistake.
 It is not sieve but more efficient that the brute force approach.
-It is more like a relatively efficient approach with your complexity reduced to O(&radic(N)) and for a list it is still efficient and becomes O(N).
+It is more like a relatively efficient approach with your complexity reduced to O(&radic;(N)) and for a list it is still efficient and becomes O(N).
 
 
 ```Python3
