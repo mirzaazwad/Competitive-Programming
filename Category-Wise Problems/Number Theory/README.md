@@ -219,3 +219,15 @@ int main()
 }
 ```
 This is another approach to create and print a list of prime numbers.
+
+The first approach has a time complexity of O(n*(log(n)) while the second approach has a time complexity of log(n) hence the second one is more preferable approach. And the auxilary space for both is O(n).
+
+More on Sieve [A Codeforces Blog On It](https://codeforces.com/blog/entry/54090)
+
+[A Github Blog on Segmented Sieve](https://github.com/kimwalisch/primesieve/wiki/Segmented-sieve-of-Eratosthenes)
+
+[Another Codeforces Blog, basically explains how sieve can take O(N) as well?](https://codeforces.com/blog/entry/22229)
+
+[Some TidBits to know, check out the comments section](https://codeforces.com/blog/entry/61700)
+
+[An Overview of Sieve and Practice Problems](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html)
