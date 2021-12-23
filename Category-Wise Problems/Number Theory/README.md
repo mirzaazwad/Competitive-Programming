@@ -231,3 +231,5 @@ More on Sieve [A Codeforces Blog On It](https://codeforces.com/blog/entry/54090)
 [Some TidBits to know, check out the comments section](https://codeforces.com/blog/entry/61700)
 
 [An Overview of Sieve and Practice Problems](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html)
+
+[Segmented Sieve Codeforces](https://codeforces.com/blog/entry/61430)
