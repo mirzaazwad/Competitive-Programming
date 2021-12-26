@@ -50,7 +50,7 @@ but why 2? since the numbers are distinct and c=1.
 Method-2
 First some number theory, through this I came accross some new stuff such as https://people.math.sc.edu/howard/Classes/580f/hw4.pdf which introduced me to Bezout's theorem,
 basically "ax+by=1 for x and y are integers and gcd(a,b)=1 and a,b are relatively prime or coprime"---(i), 
-also "I understood that two consecutive numbers are coprime or reltively prime"---(ii)
+also "I understood that two consecutive numbers are coprime or relatively prime"---(ii)
 as well as understanding that "gcd(a,b)=gcd(a,b+k*a) for k is a constant and a>0"---(iii).
 and also that "gcd(a,b)=gcd(b,a)" Yes its commutative in a way but the idea remains the same as gcd is basically the highest common factor and hence the numbers swapping 
 positions doesn't change the number of common factors.
