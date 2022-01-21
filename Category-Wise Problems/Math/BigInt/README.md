@@ -2,7 +2,10 @@
 
 BigInt is actually a data type available in Java, in C++ by default a maximum of int_128 is available
 but that too with a lot of hassle. To accomodate numbers that exceed the range available by int_128, that too being greater than
-[-2<sup>128</sup>-1,2<sup>128</sup>-1] !!!!.
+[-2<sup>128</sup>-1,2<sup>128</sup>-1] !!!!
+
+You can just add this class and work with BigInt numbers.
+
 
 Thanks to GeeksForGeeks and the codeforces community
 Behold the BigInt!!! 
