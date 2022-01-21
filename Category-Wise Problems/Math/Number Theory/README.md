@@ -31,7 +31,7 @@ A good introductory problem to gcd with medium difficulty is discussed below,
 
 [Codeforces 1617B](https://codeforces.com/contest/1617/problem/B)
 
-So let's discuss the complexitiyies, so we have time complexity of O(log(min(a,b))) and a space complexity of O(1).
+This is by far the most efficient approach to finding the gcd of 2 numbers and is known as the Euclidean Algorithm. And it works as the base for the extended euclidean algorithm.
 
 ## Prime Number Determination
 
