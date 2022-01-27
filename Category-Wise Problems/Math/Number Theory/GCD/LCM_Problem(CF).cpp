@@ -1,13 +1,5 @@
 //Link: https://codeforces.com/problemset/problem/1389/A
-/*
-Suppose we have chosen   and   as the answer, and   is not a divisor of  . Since   belongs to  , we could have chosen   and   instead. So if the answer exists, there also exists an answer where   is a divisor of  
-
-.
-
-If  
-, then there is no pair   such that   and  . Otherwise,   and   is the answer.
-*/
-
+//if the number l and r, the lcm can only exist if 2*l<=r, the answer would be x=l and y=2*l
 #include <bits/stdc++.h>
 
 #define fastio                        \
