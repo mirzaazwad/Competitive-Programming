@@ -185,7 +185,7 @@ int main()
 ```
 This is another approach to create and print a list of prime numbers.
 
-The first approach has a time complexity of O(n*(log(n)) while the second approach has a time complexity of log(n) hence the second one is more preferable approach. And the auxilary space for both is O(n).
+The time complexity for the sieve algorithm is O(Nlog(log(N))).
 
 More on Sieve [A Codeforces Blog On It](https://codeforces.com/blog/entry/54090)
 
