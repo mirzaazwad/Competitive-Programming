@@ -10,7 +10,7 @@ int phi[N+1];
 
 void eulerTotient(){
     for(int i=0;i<=N;i++)phi[i]=i;
-    for(int i=2;i*i<=N;i++){
+    for(int i=2;i<=N;i++){//you can optimise sieve of eratosthenes with i*i<=N but don't do that for euler totient as it might lead to inaccurate precalculation
         if(phi[i]==i){
             for(int j=i+i;j<=N;j=j+i)phi[j]=(phi[j]*(i-1))/i;
             phi[i]=i-1;
