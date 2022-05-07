@@ -26,6 +26,8 @@
  
 using namespace std;
  
+#define v(x) vector<x>
+#define d(x) deque<x>
 typedef long long ll;
 typedef long double ld;
 typedef pair<int,int> pi;
@@ -38,7 +40,15 @@ typedef vector<vector<ll> > vvll;
 typedef vector<vector<pll> > vvpll;
 typedef vector<pll> vpll;
 typedef vector<pi> vpi;
+typedef deque<ll> dll;
+typedef deque<int> di;
+typedef deque<deque<int> > ddi;
+typedef deque<deque<ll> > ddll;
+typedef deque<deque<pll> > ddpll;
+typedef deque<pll> dpll;
+typedef deque<pi> dpi;
 ll MOD = 998244353;
+ll M = 1000000007;
 double eps = 1e-12;
 #define forn(i,e) for(ll i = 0; i < e; i++)
 #define forsn(i,s,e) for(ll i = s; i < e; i++)
@@ -47,7 +57,7 @@ double eps = 1e-12;
 #define forsnx(i,s,e,x) for(ll i = s; i < e; i+=x)
 #define rforsnx(i,s,e,x) for(ll i = s; i >= e; i-=x)
 #define endl "\n"
-#define dbg(x) cout<<#x<<" = "<<x<<ln
+#define dbg(x) cout<<#x<<" = "<<x<<endl
 #define mp make_pair
 #define pb push_back
 #define fi first
@@ -58,11 +68,14 @@ double eps = 1e-12;
 #define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
-#define ittc int tc ; cin >> tc ; for(int it=1;it<=tc;it++)
 #define Case cout << "Case " << it << ": ";
 #define down cout<<endl;
-#define readline(x) getline(cin,(x))
-#define input(x) cin>>(x)
+#define raw_readline(x) getline(cin,(x))
+#define readline(x) string (x);getline(cin,(x))
+#define raw_read(x) cin>>(x)
+#define raw_input(x) cin>>(x);cin.ignore()
+#define input(datatype,x) datatype (x);cin>>(x);cin.ignore()
+#define read(datatype,x) datatype (x);cin>>(x)
 #define print(x) cout<<(x)<<endl
 #define output(x) cout<<(x)<<sp
 #define YES output("YES")
@@ -71,48 +84,33 @@ double eps = 1e-12;
 #define NO output("NO")
 #define No output("No")
 #define no output("no")
-ll M = 1000000007;
+#define ittc input(int,tc) ; for(int it=1;it<=tc;it++)
+#define printarray(arr,n) forn(i,n)output(arr[i]); \
+down \
  
 
-bool isSorted(vll v, int n) { 
-    for(int i=1;i<n;i++){
-        if(v[i]<v[i-1]) return false;
-    }
-    return true;
-}
-
-void signSwap(vll v,vll tmp, int n,int& pos_swap, int& neg_swap) {
-    forn(i,n){
-        if(v[i]!=tmp[i]){
-            if(v[i]>0)pos_swap++;
-            else neg_swap++;
-        }
-    }
-}
-
 void solve(){
-        int n,negativeCount=0;
-        input(n);
-        vll v(n),tmp(n);
-        forn(i,n){
-            cin>>v[i];
-            tmp[i]=abs(v[i]);
-            if(v[i]<0)negativeCount++;
+    readline(friends);
+    int len=sz(friends);
+    int R1=-1,L0=-1;//R1 means rightmost 1 and L0 means leftmost 0
+    rforn(i,len-1){
+        if(friends[i]=='1'){
+            R1=i;
+            break;
         }
-        int i=0;
-        for(int i=0;i<negativeCount;i++){
-            tmp[i]=-tmp[i];
+    }
+    if(L0==-1)L0=len-1;
+    forn(i,len){
+        if(friends[i]=='0'){
+            L0=i;
+            break;
         }
-        int pos_swap=0,neg_swap=0;
-        signSwap(v,tmp,n,pos_swap,neg_swap);
-        if(isSorted(tmp,n) && pos_swap==neg_swap){
-            YES;
-            return;
-        }
-        NO;
+    }
+    if(R1==-1)R1=0;
+   
+    output(L0-R1+1);
 
-       
-
+    
 }
 int main()
 {
