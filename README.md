@@ -26,5 +26,7 @@ Also look into A2OJ ladders for finding more practice problems sorted by difficu
 
 
 [Some Good Tips from a good CPer](https://medium.com/@pankajkumar12/my-tips-for-competitive-programmers-2f0658695a0b)
+
+
 These resoruces are also the contributions of various individuals who helped shape my CP journey. Especially those at IUT who taught me the basics via the ACM classes.
 
