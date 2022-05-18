@@ -91,20 +91,25 @@ down \
 
 void solve(){
     input(int,n);
-    vi arr(n),tmp;
-    forn(i,n)cin>>arr[i];
-    int maximum=*max_element(all(arr));
-    unordered_set<int>s;
+    vi arr(n);
+    int maximum=INT_MIN;
+    v(bool) has(n+1);
     forn(i,n){
-        s.insert(arr[i]);
+        cin>>arr[i];
+        maximum=max(maximum,arr[i]);
+    }
+    int ix=0;
+    forn(i,n){
+        has[arr[i]]=true;
         if(arr[i]==maximum){
-            while(s.find(maximum)!=s.end()){
+            while(has[maximum]){
                 output(maximum);
                 maximum--;
             }
         }
         down
     }
+    
 
 }
 
