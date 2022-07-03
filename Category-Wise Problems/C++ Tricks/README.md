@@ -9,3 +9,12 @@ In onsite constests you wouldn't get many of these features so beware.
 Now when it comes to header I prefer ``` bits/stdc++.h ```
 
 This includes all the necessary files and file headers for Competitive Programmming(at least most of them). Then we move on to the next step. We learn about snippets and their importance.
+
+
+###### Using Lambda Functions in C++
+
+[First Article to Read](https://www.geeksforgeeks.org/lambda-expression-in-c/)
+
+[Second Article to Read](https://www.geeksforgeeks.org/generalized-lambda-expressions-c14/?ref=rp)
+
+[Lambda Expressions vs Function Pointers](https://www.geeksforgeeks.org/lambda-expressions-vs-function-pointers/?ref=rp)
