@@ -26,6 +26,21 @@ def gcd(a,b):
 	else:
 		return gcd(b,a%b)
 ```
+
+GCD iterative implementation in python:
+
+```Python3
+def gcd(a,b):
+    x=a
+    y=b
+    while(y!=0):
+        r=x%y
+        x=y
+        y=r
+    return x
+```
+
+
 A good introductory problem to gcd with medium difficulty is discussed below, 
 
 [Codeforces 1617B](https://codeforces.com/contest/1617/problem/B)
