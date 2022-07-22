@@ -8,7 +8,9 @@ Take the sequence;
 
 
 9,    12,    19,    30,    ...
-   +3,    +7,    +11,   ...                 
+
+   +3,    +7,    +11,   ...         
+   
         +4,    +4,    ...                      
 
 We can see the difference is not constant, 
@@ -57,7 +59,9 @@ If the change in the difference is (a) then the nth term follows a (1/2a)n2 patt
 ```
 
  1      2      3       4
+ 
 -7,    -4,    -1,    +2
+
     +3     +3    +3
 ```
 
