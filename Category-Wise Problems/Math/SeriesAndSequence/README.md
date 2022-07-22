@@ -27,7 +27,7 @@ If the change in the difference is (a) then the nth term follows a (1/2a)n<sup>2
 
 ```
 
-         n       n2      2n2
+         n       n<sup>2</sup>      2n<sup>2</sup>
 9       1       1         2
 
 12     2       4         8             
