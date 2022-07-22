@@ -5,14 +5,14 @@ Take the sequence;
 9,    12,    19,    30,    ...
 
 ###### (1) The first step is always to look at difference between the terms;
-
+```
 
 9,    12,    19,    30,    ...
 
    +3,    +7,    +11,   ...         
    
         +4,    +4,    ...                      
-
+```
 We can see the difference is not constant, 
 
 ###### (2)  so we looked at the change in the difference each term.
