@@ -27,7 +27,7 @@ If the change in the difference is (a) then the nth term follows a (1/2a)n<sup>2
 
 ```
 
-         n       n<sup>2</sup>      2n<sup>2</sup>
+         n       n2      2n2
 9       1       1         2
 
 12     2       4         8             
@@ -38,7 +38,7 @@ If the change in the difference is (a) then the nth term follows a (1/2a)n<sup>2
 
 ```
 
-###### (5) We need to find the difference between the sequence and 2n2.
+###### (5) We need to find the difference between the sequence and 2n<sup>2</sup>.
 
 ```
 
@@ -54,7 +54,7 @@ If the change in the difference is (a) then the nth term follows a (1/2a)n<sup>2
 
 ```
 
-###### (6) The difference here will either be a constant number, in which case the nth term is (1/2a)n2 +d. Or like this case, will itself follow a linear sequence with constant difference, which we should know how to solve.
+###### (6) The difference here will either be a constant number, in which case the nth term is (1/2a)n<sup>2</sup> +d. Or like this case, will itself follow a linear sequence with constant difference, which we should know how to solve.
 
 ```
 
@@ -67,4 +67,4 @@ If the change in the difference is (a) then the nth term follows a (1/2a)n<sup>2
 
 This gives 3n - 10. Therefore the whole formula for the nth term is;
 
-###### (7) 2n2 + 3n - 10
+###### (7) 2n<sup>2</sup> + 3n - 10
