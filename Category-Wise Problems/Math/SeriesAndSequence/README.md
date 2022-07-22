@@ -1,8 +1,8 @@
 # Finding the Sum of n, n<sup>2</sup>, n<sup>3</sup> and n<sup>x</sup> ?
 
-(A Brilliant Article)[https://brilliant.org/wiki/sum-of-n-n2-or-n3/]
+[A Brilliant Article](https://brilliant.org/wiki/sum-of-n-n2-or-n3/)
 
-(Cue Math)[https://www.cuemath.com/summation-formulas/]
+[Cue Math](https://www.cuemath.com/summation-formulas/)
 
 Read these articles to understand the concepts more clearly.
 
