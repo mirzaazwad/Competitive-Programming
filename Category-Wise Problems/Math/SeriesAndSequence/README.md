@@ -1,3 +1,11 @@
+# Artithmetic Progression
+
+[Read This Article](https://byjus.com/maths/arithmetic-progression/)
+
+# Geometric Progression
+
+[Read This Article](https://byjus.com/maths/geometric-progression/)
+
 # Finding the Sum of n, n<sup>2</sup>, n<sup>3</sup> and n<sup>x</sup> ?
 
 [A Brilliant Article](https://brilliant.org/wiki/sum-of-n-n2-or-n3/)
