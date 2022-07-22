@@ -19,9 +19,9 @@ We can see the difference is not constant,
 
 This gives a constant change in the difference of an extra +4 each term. The fact that we needed to take 2 turns to find the constant difference means we are dealing with a quadratic sequence.
 
-###### (3) Furthermore, because the difference is +4, we are dealing with a 2n2 sequence.
+###### (3) Furthermore, because the difference is +4, we are dealing with a 2n<sup>2</sup> sequence.
 
-If the change in the difference is (a) then the nth term follows a (1/2a)n2 pattern.
+If the change in the difference is (a) then the nth term follows a (1/2a)n<sup>2</sup> pattern.
 
 ###### (4) Now we can rewrite the sequence as follows;
 
