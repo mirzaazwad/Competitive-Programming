@@ -23,6 +23,8 @@ If the change in the difference is (a) then the nth term follows a (1/2a)n2 patt
 
 ###### (4) Now we can rewrite the sequence as follows;
 
+```
+
          n       n2      2n2
 9       1       1         2
 
@@ -32,7 +34,11 @@ If the change in the difference is (a) then the nth term follows a (1/2a)n2 patt
 
 30     4      16       32
 
+```
+
 ###### (5) We need to find the difference between the sequence and 2n2.
+
+```
 
            2n2        d
 
@@ -44,11 +50,16 @@ If the change in the difference is (a) then the nth term follows a (1/2a)n2 patt
 
 30       32        +2
 
+```
+
 ###### (6) The difference here will either be a constant number, in which case the nth term is (1/2a)n2 +d. Or like this case, will itself follow a linear sequence with constant difference, which we should know how to solve.
+
+```
 
  1      2      3       4
 -7,    -4,    -1,    +2
     +3     +3    +3
+```
 
 This gives 3n - 10. Therefore the whole formula for the nth term is;
 
