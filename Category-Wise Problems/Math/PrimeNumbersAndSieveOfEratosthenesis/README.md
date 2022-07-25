@@ -189,12 +189,8 @@ The time complexity for the sieve algorithm is O(Nlog(log(N))).
 
 More on Sieve [A Codeforces Blog On It](https://codeforces.com/blog/entry/54090)
 
-[A Github Blog on Segmented Sieve](https://github.com/kimwalisch/primesieve/wiki/Segmented-sieve-of-Eratosthenes)
-
 [Another Codeforces Blog, basically explains how sieve can take O(N) as well?](https://codeforces.com/blog/entry/22229)
 
 [Some TidBits to know, check out the comments section](https://codeforces.com/blog/entry/61700)
 
 [An Overview of Sieve and Practice Problems](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html)
-
-[Segmented Sieve Codeforces](https://codeforces.com/blog/entry/61430)
