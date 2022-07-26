@@ -12,7 +12,7 @@ Resources:
 
 [Geeks For Geeks](https://www.geeksforgeeks.org/primality-test-set-3-miller-rabin/)
 
-#Fermat's Primality Testing
+# Fermat's Primality Testing
 
 Resources:
 
