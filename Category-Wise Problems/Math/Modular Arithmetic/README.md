@@ -37,7 +37,7 @@ ll bigmod(ll a,ll b,ll c)
     ll x = 1 , y = a%c ;
     while( b > 0 )
     {
-        if(b%2) x = bigmod(x,y,c) ;
+        if(b%2) x = mulmod(x,y,c) ;
         y=mulmod(y,y,c);
         b/=2;
     }
