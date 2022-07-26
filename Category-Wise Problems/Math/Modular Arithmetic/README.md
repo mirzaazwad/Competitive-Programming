@@ -43,6 +43,7 @@ ll bigmod(ll a,ll b,ll c)
     }
     return x%c ;
 }
+
 /* Calcular a^(-1) for which a*a^(-1)(mod m)=1 */
 ll inverseMod(ll a, ll m){
   int s,t;
