@@ -26,8 +26,9 @@ void eulerTotient(){
             phi[i]=i-1;
         }
     }
+	//The general formula is S=(n/2)*Sum(phi[d]*d+1) where d is gcd(i,d) for 0<i<n
     for(int i=1;i<=N;i++){
-        for(int j=i;j<=N;j+=i)result[j]+=phi[i]*i;
+        for(int j=i;j<=N;j+=i)result[j]+=phi[i]*i;//for all multiples of d phi[d]*d is added to result allowing us prefix phi[d]*d
     }
 }
 
