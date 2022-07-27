@@ -1,2 +1,6 @@
+# GCD Sum
 
-[GCD Sum](https://codeforces.com/blog/entry/7308)
+Resources:
+
+[Codeforces Blog](https://codeforces.com/blog/entry/7308)
+
