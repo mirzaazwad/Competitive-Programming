@@ -40,6 +40,4 @@ int main()
 
 [GeeksForGeeks](https://www.geeksforgeeks.org/eulers-totient-function/)
 
-[GCD Sum](https://codeforces.com/blog/entry/7308)
-
 The Time Complexity of Euler Totient Function is the same as sieve which is Nlog(log(N))
