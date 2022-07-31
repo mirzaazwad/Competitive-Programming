@@ -24,6 +24,4 @@ Other Problems to solve:
 
 9) EOLYMP 1687
 
-10) SPOJ ADAGCD
-
-11) LOJ Grid Coloring
+10) LOJ Grid Coloring
