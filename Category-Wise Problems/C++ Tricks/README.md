@@ -1,4 +1,4 @@
-## C++ Tricks and why it is important
+# C++ Tricks and why it is important
 
 The most popular language for competitive programming is C++. it is easiest to chose this language for competitive programming.
 I personally prefer using vscode as an IDE. Below I would give a borderline idea of how you could setup vscode for optimised coding experience in your online contests.
@@ -9,6 +9,25 @@ In onsite constests you wouldn't get many of these features so beware.
 Now when it comes to header I prefer ``` bits/stdc++.h ```
 
 This includes all the necessary files and file headers for Competitive Programmming(at least most of them). Then we move on to the next step. We learn about snippets and their importance.
+
+## Fast Input C/C++
+
+```
+template <class T> void fastInput(T &n){
+    char ch;
+    int sign = 1;
+    while(ch = getchar_unlocked(), isspace(ch)) {
+        
+    };
+    n = 0;
+    if(ch == '-')
+        sign = -1;
+    else n = ch - '0';
+    while(ch = getchar_unlocked(), isdigit(ch))
+        n = (n << 3) + (n << 1) + ch - '0';
+    n *= sign;
+}
+```
 
 
 ###### Using Lambda Functions in C++
