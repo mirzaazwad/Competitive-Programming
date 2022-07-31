@@ -12,7 +12,7 @@ This includes all the necessary files and file headers for Competitive Programmm
 
 ## Fast Input C/C++
 
-```
+```cpp
 template <class T> void fastInput(T &n){
     char ch;
     int sign = 1;
