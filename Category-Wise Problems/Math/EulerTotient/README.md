@@ -36,6 +36,41 @@ int main()
 }
 ```
 
+For larger numbers often it is not efficient to generate the eulerTotient value and store it in an array.
+In that event, the best decision would be to
+```cpp
+ll phi(ll n)
+{
+    // Initialize result as n
+    ll result = n;
+  
+    // Consider all prime factors of n
+    // and subtract their multiples
+    // from result
+    for(ll p = 2; p * p <= n; ++p)
+    {
+         
+        // Check if p is a prime factor.
+        if (n % p == 0)
+        {
+             
+            // If yes, then update n and result
+            while (n % p == 0)
+                n /= p;
+                 
+            result -= result / p;
+        }
+    }
+  
+    // If n has a prime factor greater than sqrt(n)
+    // (There can be at-most one such prime factor)
+    if (n > 1)
+        result -= result / n;
+         
+    return result;
+}
+```
+
 ###### Some Resources:
 
 [GeeksForGeeks](https://www.geeksforgeeks.org/eulers-totient-function/)
