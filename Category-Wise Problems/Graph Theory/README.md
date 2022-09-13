@@ -219,3 +219,30 @@ Understanding the concepts of How Recursion Can be Used in a similar way to stac
 
 Visualising Graphs and Graph traversals. [Click Here](https://csacademy.com/app/graph_editor/)
 
+## Path, Connectivity and Cycles
+
+A **Path** is a **Cycle** if the first and last nodes are the same. A **Path** is a **Simple** Path if each node appears at most once in the path.
+
+A Graph is said to be **connected** if there exists a path between any 2 nodes.
+
+The connected parts of graph are called its **components**.
+
+See illustrations of these ideas in Competitive Programming Handbook in the introduction README.md of this repository.[Click Here](https://drive.google.com/file/d/1lWrMyp3bNgAebbpVaeOnHOBhjM1HU_JZ/view?usp=sharing)
+
+## Direction of Graphs
+
+A graph is said to be **directed** if the graph can be traversed in one direction only. 
+
+## Weighted Graphs
+
+In a **weighted graph** each edge is assigned a **weight**. The weights are often interpreted as **edge lengths**.
+
+Weighted graphs also address the idea of the shortest path between 2 nodes. 
+
+## Neighbours and Degrees
+
+Two nodes are **neighbors** or **adjacent** if there is an **edge** between them. The
+**degree** of a node is the number of its neighbors.
+
+
+
