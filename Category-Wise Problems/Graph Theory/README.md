@@ -12,6 +12,14 @@ Let's first take a graph:
 
 ![Graph Image](https://github.com/mirzaazwad/Competitive-Programming/blob/main/Category-Wise%20Problems/Graph%20Theory/Implementations/Example%20Graph.png)
 
+This graph consists of nodes represented by numbers and the connection between these nodes is represented by lines called edges.
+
+Nodes are also known as vertices.
+
+The length of the path is defined as the number of **edges** in it. 
+
+n is used traditionally to define the number of nodes and m is used traditionally to define the number of edges.
+
 ## Representing Graphs Algorithimically
 
 
