@@ -28,5 +28,13 @@ Also look into A2OJ ladders for finding more practice problems sorted by difficu
 [Some Good Tips from a good CPer](https://medium.com/@pankajkumar12/my-tips-for-competitive-programmers-2f0658695a0b)
 
 
+[My Personal Training Sheet for CP](https://docs.google.com/spreadsheets/d/1Kw10V4A8UNoeDt0JC9ho7FHuLokmUZKGYYTzxb3AxQo/edit?usp=sharing)
+
+[My Training Sheet For Leetcode](https://docs.google.com/spreadsheets/d/16k05a0XT2iqQCTFUvr3k2uesyi-v28zcSDszyz3XfZc/edit?usp=sharing)
+
+Also my DSA Repository contains more information about my approach to understanding and implementing DSA related content:
+
+[DSA Repository](https://github.com/mirzaazwad/Data-Structures-And-Algorithms)
+
 These resoruces are also the contributions of various individuals who helped shape my CP journey. Especially those at IUT who taught me the basics via the ACM classes.
 
