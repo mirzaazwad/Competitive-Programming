@@ -28,7 +28,7 @@ void Merge(int arr[],int start,int mid,int end){
         }
         res_ix++;
     }
-
+    //copying the remaining elements of left and right arrays if any
     while(left_ix<left_size){
         arr[res_ix]=left[left_ix];
         left_ix++;
