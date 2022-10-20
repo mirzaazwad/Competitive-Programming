@@ -16,13 +16,13 @@ using namespace std;
     cin.tie(NULL);                    \
     cout.tie(NULL)
 
-namespace ProblemC1
+namespace Problem
 {
     class Program
     {
     private:
-        Int n;
-        vector<ll> v;
+        vector<ll> a;
+        int n;
 
     public:
         Program(Int t)
@@ -38,29 +38,43 @@ namespace ProblemC1
         void takeInput()
         {
             cin >> n;
-            for (int i = 0; i < n; i++)
+            vector<ll> temp(n);
+            a = temp;
+            for (ll &i : a)
             {
-                ll value;
-                cin >> value;
-                v.push_back(value);
+                cin >> i;
             }
         }
 
         void clearSpace()
         {
-            v.clear();
+            a.clear();
+            n = 0;
         }
+
+        bool isStrictlyIncreasing(vector<ll> arr, int n)
+        {
+            for (int i = 1; i < n; i++)
+            {
+                if (arr[i - 1] >= arr[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         void solve()
         {
-            ll ans = 0;
-            Int r = -1;
-            for (Int l = 0; l < n; l++)
+            sort(a.begin(), a.end());
+            if (isStrictlyIncreasing(a, n))
             {
-                while (r + 1 < n && v[r + 1] > r + 1 - l)
-                    r++;
-                ans += (ll)(r - l + 1);
+                cout << "YES" << endl;
             }
-            cout << ans << endl;
+            else
+            {
+                cout << "NO" << endl;
+            }
         }
     };
 }
@@ -69,6 +83,6 @@ signed main()
     fastio;
     Int tc;
     cin >> tc;
-    ProblemC1::Program program = ProblemC1::Program(tc);
+    Problem::Program program = Problem::Program(tc);
     return 0;
 }

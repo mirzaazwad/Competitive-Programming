@@ -16,13 +16,12 @@ using namespace std;
     cin.tie(NULL);                    \
     cout.tie(NULL)
 
-namespace ProblemC1
+namespace Problem
 {
     class Program
     {
     private:
-        Int n;
-        vector<ll> v;
+        int a, b, c;
 
     public:
         Program(Int t)
@@ -37,30 +36,25 @@ namespace ProblemC1
 
         void takeInput()
         {
-            cin >> n;
-            for (int i = 0; i < n; i++)
-            {
-                ll value;
-                cin >> value;
-                v.push_back(value);
-            }
+            cin >> a >> b >> c;
         }
 
         void clearSpace()
         {
-            v.clear();
+            a = 0;
+            b = 0;
+            c = 0;
         }
         void solve()
         {
-            ll ans = 0;
-            Int r = -1;
-            for (Int l = 0; l < n; l++)
+            if (a == (b + c) || b == (a + c) || c == (a + b))
             {
-                while (r + 1 < n && v[r + 1] > r + 1 - l)
-                    r++;
-                ans += (ll)(r - l + 1);
+                cout << "YES" << endl;
             }
-            cout << ans << endl;
+            else
+            {
+                cout << "NO" << endl;
+            }
         }
     };
 }
@@ -69,6 +63,6 @@ signed main()
     fastio;
     Int tc;
     cin >> tc;
-    ProblemC1::Program program = ProblemC1::Program(tc);
+    Problem::Program program = Problem::Program(tc);
     return 0;
 }
