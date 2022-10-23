@@ -1,8 +1,5 @@
 /*
-@csalgo
-
 Coin Change Problem
-Send Feedback
 For the given infinite supply of coins of each of denominations, D = {D0, D1, D2, D3, ...... Dn-1}. You need to figure out the total number of ways W, in which you can make the change for Value V using coins of denominations D.
 Return 0 if the change isn't possible.
 Input Format
@@ -31,9 +28,6 @@ Sample Input 2 :
 1 2 3 4 5 6
 250
 Sample Output 2 :
-13868903
-
-@csalgo :
 13868903
 */
 #include <bits/stdc++.h>
