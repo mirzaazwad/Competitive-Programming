@@ -1,0 +1,22 @@
+{
+    "files.associations": {
+        "xstring": "cpp",
+        "chrono": "cpp",
+        "complex": "cpp",
+        "optional": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "xlocmon": "cpp",
+        "xtr1common": "cpp",
+        "deque": "cpp",
+        "format": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "*.tcc": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "regex": "cpp"
+    }
+}
