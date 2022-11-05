@@ -43,7 +43,7 @@ using namespace std;
 
 int dp[1001][11];
 
-int CoinChange(int value,int *coins,int len){
+int CoinChange(int value,ll *coins,int len){
     if(value==0){
         return 1;
     }
@@ -62,22 +62,52 @@ int CoinChange(int value,int *coins,int len){
     return dp[value][len];
 }
 
+// This code is
+ll CoinChangeIterative(ll coins[], int n, ll sum)
+{
+	// table[i] will be storing the number of solutions for
+	// value i. We need sum+1 rows as the table is
+	// constructed in bottom up manner using the base case
+	// (sum = 0)
+	ll table[sum + 1];
+
+	// Initialize all table values as 0
+	memset(table, 0, sizeof(table));
+
+	// Base case (If given value is 0)
+	table[0] = 1;//when value is 0 there is only one option no coins and we are counting the number of options
+
+	// Pick all coins one by one and update the table[] values after the index greater than or equal to the value of the picked coin
+	for (int i = 0; i < n; i++){
+		for (int j = coins[i]; j <= sum; j++){
+			table[j] += table[j - coins[i]];//first option v
+        }
+	}
+	return table[sum];
+}
+
 int main()
 {
     fastio;
     int amount,numberOfCoinTypes;
 
     cin>>numberOfCoinTypes;
+    cin>>amount;
 
-    int coinDenominations[numberOfCoinTypes];
+    ll coinDenominations[numberOfCoinTypes];
 
     for(int i=0;i<numberOfCoinTypes;i++)cin>>coinDenominations[i];
 
-    cin>>amount;
+    
 
     memset(dp,-1,sizeof(dp));
 
-    cout<<CoinChange(amount,coinDenominations,numberOfCoinTypes);
+    cout<<CoinChange(amount,coinDenominations,numberOfCoinTypes)<<endl;
+    for(int i=0;i<=amount;i++){
+        for(int j=0;j<=numberOfCoinTypes;j++)cout<<dp[i][j]<<" ";
+        cout<<endl;
+    }
+    cout<<CoinChangeIterative(coinDenominations,numberOfCoinTypes,amount);
 
     return 0;
 }

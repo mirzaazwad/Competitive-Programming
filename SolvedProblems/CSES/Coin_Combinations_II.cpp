@@ -21,12 +21,16 @@ ll count(ll coins[], int n, ll sum)
 	// Pick all coins one by one and update the table[]
 	// values after the index greater than or equal to the
 	// value of the picked coin
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < n; i++){
 		for (int j = coins[i]; j <= sum; j++){
 			table[j] += table[j - coins[i]];
             table[j]%=mod;
         }
-            
+		for(int j=0;j<sum+1;j++){
+			cout<<table[j]<<" ";
+		}
+		cout<<endl;
+	}
 	return table[sum];
 }
 
