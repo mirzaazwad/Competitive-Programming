@@ -4,7 +4,7 @@
 #pragma GCC optimize("Ofast")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
 #pragma GCC optimize("unroll-loops")
-#include <bits/stdc++.h>
+#include <iostream>
 #define ll int64_t
 #define short int16_t
 #define int int32_t
@@ -20,6 +20,8 @@ namespace Problem
     {
     private:
         int r;
+        int high;
+        int low;
         string reply;
 
     public:
@@ -27,11 +29,19 @@ namespace Problem
         {
             for (int i = 1; i <= t; i++)
             {
+                takeInput();
                 solve();
             }
         }
 
-        void takeInput(int i, int mid)
+        void takeInput()
+        {
+            cin >> r;
+            low = 1;
+            high = r + 1;
+        }
+
+        void query(int i, int mid)
         {
             cout << i * mid << endl;
             cin >> reply;
@@ -39,14 +49,16 @@ namespace Problem
 
         void solve()
         {
-            int low = 1;
-            int high = r + 1;
             int i = 0;
-            cin >> r;
-            while (low < high && ++i < 85)
+            while (low < high)
             {
+                i++;
+                if (i == 85)
+                {
+                    break;
+                }
                 int mid = (high + low) / 2;
-                takeInput(i, mid);
+                query(i, mid);
                 if (reply == "less")
                 {
                     high = mid;
