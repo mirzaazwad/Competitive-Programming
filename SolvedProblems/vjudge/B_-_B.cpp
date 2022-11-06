@@ -14,7 +14,7 @@ using namespace std;
     cin.tie(NULL);                    \
     cout.tie(NULL)
 
-namespace Problem
+namespace ProblemB
 {
     class Program
     {
@@ -69,7 +69,7 @@ namespace Problem
                 }
                 else
                 {
-                    exit(0);
+                    return;
                 }
             }
         }
@@ -78,6 +78,6 @@ namespace Problem
 signed main()
 {
     fastio;
-    Problem::Program program = Problem::Program();
+    ProblemB::Program program = ProblemB::Program();
     return 0;
 }
