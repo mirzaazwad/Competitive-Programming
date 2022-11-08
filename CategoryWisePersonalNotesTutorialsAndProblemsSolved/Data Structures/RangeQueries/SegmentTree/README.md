@@ -28,6 +28,7 @@ Let's consider the following tree:
 
 
 Bangla Tutorial for Segment Tree: [Segment Tree Part 1 Bangla](http://www.shafaetsplanet.com/?p=1557)
+
                                   [Segment Tree Part 2 Bangla](https://www.shafaetsplanet.com/?p=1591)
 
 Initialize the segment tree
