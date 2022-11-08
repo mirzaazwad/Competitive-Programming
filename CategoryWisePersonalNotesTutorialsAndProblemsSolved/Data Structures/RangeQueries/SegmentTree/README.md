@@ -27,9 +27,9 @@ Let's consider the following tree:
 ![Segment Tree Picture](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/SegTree.png)
 
 
-Bangla Tutorial for Segment Tree: [Segment Tree Part 1 Bangla](http://www.shafaetsplanet.com/?p=1557)
-
-                                  [Segment Tree Part 2 Bangla](https://www.shafaetsplanet.com/?p=1591)
+Bangla Tutorial for Segment Tree:
+* [Segment Tree Part 1 Bangla](http://www.shafaetsplanet.com/?p=1557)
+* [Segment Tree Part 2 Bangla](https://www.shafaetsplanet.com/?p=1591)
 
 Initialize the segment tree
 ```cpp
