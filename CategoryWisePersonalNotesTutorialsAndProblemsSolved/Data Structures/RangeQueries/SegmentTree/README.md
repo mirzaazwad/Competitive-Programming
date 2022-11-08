@@ -45,7 +45,16 @@ Initialize the segment tree
    int mid=(left+right)/2;
    init(left,l,mid);
    init(right,mid+1,r);
+   tree[node] = tree[l] + tree[r];
   }
 ```
+![Segment Tree Picture](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/TreeBuild.png)
 
+Then based on the level order indexing we initialise the tree array.
+
+```cpp
+  // N*3+1 where N is the length of the array being converted to segment tree.
+  int tree[N*3+1];
+  // 8 5 3 -5 10 1 2 4 -9 3 7 1 0
+```
 
