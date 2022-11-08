@@ -27,6 +27,24 @@ Let's consider the following tree:
 ![Segment Tree Picture](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/SegTree.png)
 
 
+Bangla Tutorial for Segment Tree: [Segment Tree Part 1 Bangla](http://www.shafaetsplanet.com/?p=1557)
+                                  [Segment Tree Part 2 Bangla](https://www.shafaetsplanet.com/?p=1591)
 
+Initialize the segment tree
+```cpp
+ void init(int node,int l,int r){
+ {
+  if(l==r)
+    {
+    tree[node]=arr[l];
+    return;
+   }
+   int left=node*2;
+   int right=left+1;
+   int mid=(left+right)/2;
+   init(left,l,mid);
+   init(right,mid+1,r);
+  }
+```
 
 
