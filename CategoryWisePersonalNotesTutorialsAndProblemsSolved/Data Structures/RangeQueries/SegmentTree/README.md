@@ -22,5 +22,11 @@ int mid=(left+right)/2;
 
 As per the mid we break the range into equal halves.
 
+Let's consider the following tree:
+
+![Segment Tree Picture](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/SegTree.png)
+
+
+
 
 
