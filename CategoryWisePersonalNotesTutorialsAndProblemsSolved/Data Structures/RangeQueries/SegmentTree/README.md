@@ -27,11 +27,11 @@ Let's consider the following tree:
 ![Segment Tree Picture](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/SegTree.png)
 
 
-Bangla Tutorial for Segment Tree:
+## Bangla Tutorial for Segment Tree:
 * [Segment Tree Part 1 Bangla](http://www.shafaetsplanet.com/?p=1557)
 * [Segment Tree Part 2 Bangla](https://www.shafaetsplanet.com/?p=1591)
 
-Initialize the segment tree
+## Initialize the segment tree
 ```cpp
  void init(int node,int l,int r){
  {
@@ -57,4 +57,28 @@ Then based on the level order indexing we initialise the tree array.
   int tree[N*3+1];
   // 8 5 3 -5 10 1 2 4 -9 3 7 1 0
 ```
+## Update Function in Segment Tree
+```cpp
+void update(int node, int l, int r, int i, int newval)
+{
+  if(i>right || i<left){
+    return;
+  }
+  if(left>=i && right<=i){
+    tree[node]=newval;
+    return;
+  }
+  int left=2*node;
+  int right=left+1;
+  int mid=(left+right)/2;
+  update(left,l,mid,i,newval);
+  update(right,mid+1,r,i,newVal);
+  tree[node]=tree[left]+tree[right];
+}
+```
+
+Essentially, the idea is recursion but the recursion is carried out by pruning some of the branches to make the update process more efficient.
+
+
+
 
