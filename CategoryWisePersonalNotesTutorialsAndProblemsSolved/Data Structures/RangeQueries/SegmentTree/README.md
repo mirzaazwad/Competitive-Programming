@@ -28,8 +28,13 @@ Let's consider the following tree:
 
 
 ## Bangla Tutorial for Segment Tree:
-* [Segment Tree Part 1 Bangla](http://www.shafaetsplanet.com/?p=1557)
-* [Segment Tree Part 2 Bangla](https://www.shafaetsplanet.com/?p=1591)
+* [Segment Tree Part 1 Basics Bangla](http://www.shafaetsplanet.com/?p=1557)
+* [Segment Tree Part 2 Lazy Propagation Bangla](https://www.shafaetsplanet.com/?p=1591)
+## English Tutorials:
+* [Segment Tree CP Algorithms](https://cp-algorithms.com/data_structures/segment_tree.html)
+* [Segment Tree Codeforces](https://codeforces.com/blog/entry/15890)
+## Tutorial Videos:
+* [Segment Tree Section](https://www.youtube.com/channel/UCozCCU3b1HmcmCf2gLN_7HA/videos)
 
 ## Initialize the segment tree
 ```cpp
