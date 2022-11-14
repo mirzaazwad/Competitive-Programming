@@ -156,7 +156,9 @@ The i<sup>th</sup> node would be updated and the extra segments would be **prune
 
 Due to the array being split into 2, the height of the tree is at max log(n). So every query and update can be performed in log(n) complexity. Segment tree should only be used if we can combine two smaller segment to make a larger segment. Given the least value of the left side and the highest value of the right side, the value of the root node can also be computed with ease. An important idea has been ignored. Let's say we have been asked to update indices from i to j instead of just a specific index. If we update every leaf node seperately it would be O(nlogn) that would give you a TLE. That is where we introduce the idea of Lazy Propagation.
 
+## Lazy Propagation Technique
 
+The most elegant function of segment trees comes from the lazy propagation technique. This deals with a range of indices being updated at once.
 
 
 ## References
