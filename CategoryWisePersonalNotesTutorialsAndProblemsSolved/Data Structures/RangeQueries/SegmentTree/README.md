@@ -223,7 +223,11 @@ int query(int node, int b, int e, int i, int j, int carry = 0)
     return p1 + p2;
 }
 ```
+## Some Problems that involve Lazy Propagation
 
+[LightOJ Segment Tree Section](https://lightoj.com/problems/category/segment-tree)
+[HORRIBLE-Horrible Queries SPOJ](https://www.spoj.com/problems/HORRIBLE/)
+[LITE-Light Switching SPOJ](https://www.spoj.com/problems/LITE/)
 
 
 
