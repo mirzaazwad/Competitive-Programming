@@ -21,13 +21,6 @@ So essentially now we are going to implement a tree with the following propertie
 * The idea is creating a binary tree.
 * We implement it by breaking the array into 2 halves, basically a divide and conquer approach similar to merge sort. We compute the sum of those halves and utilise that to compute the sum of the segment in O(logn).
 
-The first step of the idea:
-
-```cpp
-int mid=(left+right)/2;
-```
-
-As per the mid we break the range into equal halves.
 So we keep dividing the array into smaller and smaller portions.
 
 ![Array Split First Split](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/ArraySplitFirst.png)
@@ -79,8 +72,46 @@ tree array is used to store the tree or basically the values of the tree. But,
 ### Why is the tree array 3 times the size of the input array?
 init function generates the tree from arr. The parameters for init are node, l and r.  Node indicates the current node and l,r indicates the current range. At the beginning we traverse from node 1 and the range from 1 to 7.(Observe the picture of the tree given above). 
 
-Now if l==r is true then we have reached the last node or the leaf node and so the value would be the value stored in the array, so we return that value. Else we split the array into 2 halves.
+Now if l==r is true then we have reached the last node or the leaf node and so the value would be the value stored in the array, so we return that value. Else we split the array into 2 halves. The left node would have an index node*2 and the right node would have an index node*2+1. And the array would be split at the middle.
+The first step of the idea:
 
+```cpp
+int mid=(left+right)/2;
+```
+
+As per the mid we break the range into equal halves. Now if we recursively call init for the two sides, we would the sum for the left and right portions. Assuming we computed that, the sum for the current node would be the sum of left and the right nodes. If you have trouble understanding this logic, try to dry run the code on pen and paper.
+
+Now let's say we need a query function that can give us the sum for the range from i to j. Let's assume that i=2 and j=6. **Then the aim should be to be obtain the result as the sum of the yellow nodes.**
+
+![QuerySum](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/QuerySum.png)
+
+So the yellow nodes are the **RELEVANT NODES**, the rest are **EXTRA NODES**. The main purpose of our query function is to find the sum of the relevant nodes. The code would be similar to the init function with some added conditions. Say you are at a node such that it contains the sum from b to e. How do you understand that this is a **RELEVANT NODE**?
+
+There can be three cases:
+A(b>=i and e<=j): The current segment is completely a part of i-j segment.
+B(i>e or j<b): The current segment is completely outside the i-j segment, so its not necessary to consider this segment.
+C(not(A or B)): Basically a part of it is within i-j segment and a part of it is outside i-j segment.
+
+This can be graphically represented as :
+![SegmentMatch](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/SegmentMatch.png)
+
+```cpp
+int query(int node, int b, int e, int i, int j)
+{
+  if(i>e || j<b){
+    return 0;//goes outside Case B
+  }
+  if(b>=i && e<=j){
+    return tree[node];//stays inside Case A
+   }
+   int left=node*2;
+   int right=node*2+1;
+   int mid=(b+e)/2;
+   int p1=query(left,b,mid,i,j);
+   int p2=query(right,mid+1,e,i,j);
+   return p1+p2;
+}
+```
 
 Then based on the level order indexing we initialise the tree array.
 
