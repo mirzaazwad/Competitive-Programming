@@ -1,4 +1,4 @@
-## Segment Tree
+# Segment Tree
 ## Why segment tree?
 
 Let's say we want a range of values that we need to apply operations on, for example, we need the sum of elements from index 1 to index 3 of
@@ -67,6 +67,13 @@ int tree[MAX*3];
    tree[node] = tree[l] + tree[r];
   }
 ```
+Then based on the level order indexing we initialise the tree array.
+
+```cpp
+  // N*3+1 where N is the length of the array being converted to segment tree.
+  int tree[N*3+1];
+  // 8 5 3 -5 10 1 2 4 -9 3 7 1 0
+```
 
 tree array is used to store the tree or basically the values of the tree. But, 
 ### Why is the tree array 3 times the size of the input array?
@@ -112,14 +119,10 @@ int query(int node, int b, int e, int i, int j)
    return p1+p2;
 }
 ```
+The query function works in a similar way to the init function. Here i,j is basically the required range and b,e is the range of the current node. 
 
-Then based on the level order indexing we initialise the tree array.
+Lastly, we have the update operation. The main reason we made the tree instead of using prefix sum. Let's say you are asked to update index 3 with a value of 10. This means that we update the value for the node that has the 3-3 range. Basically the **yellow node in the image given below**. If the node is updated, the values of the **blue nodes will also be updated**. These blue nodes exist in the path to the yellow node. The remaining nodes won't be affected because the node 3 is outside the range of these nodes.
 
-```cpp
-  // N*3+1 where N is the length of the array being converted to segment tree.
-  int tree[N*3+1];
-  // 8 5 3 -5 10 1 2 4 -9 3 7 1 0
-```
 ## Update Function in Segment Tree
 ```cpp
 void update(int node, int l, int r, int i, int newval)
@@ -139,8 +142,9 @@ void update(int node, int l, int r, int i, int newval)
   tree[node]=tree[left]+tree[right];
 }
 ```
+The i<sup>th</sup> node would be updated and the extra segments would be **pruned** or ignored at the very beginning. In the relevant segments we have inserted the new sum. Now the condition l==r would also be valid since we are always updating the lead of nodes. Instead of calling init you can also make the tree by calling update on each node.
 
-Essentially, the idea is recursion but the recursion is carried out by pruning some of the branches to make the update process more efficient.
+Due to the array being split into 2, the height of the tree is at max log(n). So every query and update can be performed in log(n) complexity. Segment tree should only be used if we can combine two smaller segment to make a larger segment. Given the least value of the left side and the highest value of the right side, the value of the root node can also be computed with ease. An important idea has been ignored. Let's say we have been asked to update indices from i to j instead of just a specific index. If we update every leaf node seperately it would be O(nlogn) that would give you a TLE. That is where we introduce the idea of Lazy Propagation.
 
 
 
