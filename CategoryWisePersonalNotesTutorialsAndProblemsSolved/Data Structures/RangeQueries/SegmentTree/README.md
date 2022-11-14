@@ -123,6 +123,8 @@ The query function works in a similar way to the init function. Here i,j is basi
 
 Lastly, we have the update operation. The main reason we made the tree instead of using prefix sum. Let's say you are asked to update index 3 with a value of 10. This means that we update the value for the node that has the 3-3 range. Basically the **yellow node in the image given below**. If the node is updated, the values of the **blue nodes will also be updated**. These blue nodes exist in the path to the yellow node. The remaining nodes won't be affected because the node 3 is outside the range of these nodes.
 
+![SegmentTreePath](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/SegmentTreePath.png)
+
 ## Update Function in Segment Tree
 ```cpp
 void update(int node, int l, int r, int i, int newval)
