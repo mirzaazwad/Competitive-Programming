@@ -162,7 +162,7 @@ Due to the array being split into 2, the height of the tree is at max log(n). So
 * [11235 UVA Frequent Values](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=134&page=show_problem&problem=2176)
 * [Curious Robin Hood LightOJ](https://lightoj.com/problem/curious-robin-hood)
 
-## Lazy Propagation Technique
+## Lazy Propagation Technique(Not in CSE 4303)
 
 The most elegant function of segment trees comes from the lazy propagation technique. This deals with a range of indices being updated at once. This is a common technique used in most segment tree problems. 
 
@@ -176,7 +176,53 @@ We are asked to update i=3 to j=5 by an addition of 2 then the array becomes:
 ```
 {4,1,2+2,3+2,9+2,8,7}
 ```
-In this case, from i=3 to j=4 that sum of the values would be 2+2+3+2=9 instead of 2+3=5 as it was earlier. In the earlier cases we just performed update on one index but now the issue of a range of values being updated starts.
+In this case, from i=3 to j=4 that sum of the values would be 2+2+3+2=9 instead of 2+3=5 as it was earlier. In the earlier cases we just performed update on one index but now the issue of a range of values being updated starts. Note that in a tree the leaf node is the bottom-most nodes and any nodes above the leaf node is an internal node. In a segment tree, the internal nodes have the merged results of the leaf nodes.
+
+```cpp
+struct info {
+    i64 prop, sum;
+} tree[mx * 3]; //sum ছাড়াও নিচে অতিরিক্ত কত যোগ হচ্ছে সেটা রাখবো prop এ
+void update(int node, int b, int e, int i, int j, i64 x)
+{
+    if (i > e || j < b)
+        return;
+    if (b >= i && e <= j) //নোডের রেঞ্জ আপডেটের রেঞ্জের ভিতরে
+    {
+        tree[node].sum += ((e - b + 1) * x); //নিচে নোড আছে e-b+1 টি, তাই e-b+1 বার x যোগ হবে এই রেঞ্জে
+        tree[node].prop += x; //নিচের নোডগুলোর সাথে x যোগ হবে
+        return;
+    }
+    int Left = node * 2;
+    int Right = (node * 2) + 1;
+    int mid = (b + e) / 2;
+    update(Left, b, mid, i, j, x);
+    update(Right, mid + 1, e, i, j, x);
+    tree[node].sum = tree[Left].sum + tree[Right].sum + (e - b + 1) * tree[node].prop;
+    //উপরে উঠার সময় পথের নোডগুলো আপডেট হবে
+    //বাম আর ডান পাশের সাম ছাড়াও যোগ হবে নিচে অতিরিক্ত যোগ হওয়া মান
+}
+```
+
+
+```cpp
+int query(int node, int b, int e, int i, int j, int carry = 0)
+{
+    if (i > e || j < b)
+        return 0;
+
+    if (b >= i and e <= j)
+        return tree[node].sum + carry * (e - b + 1); //সাম এর সাথে যোগ হবে সেই রেঞ্জের সাথে অতিরিক্ত যত যোগ করতে বলেছে সেটা
+
+    int Left = node << 1;
+    int Right = (node << 1) + 1;
+    int mid = (b + e) >> 1;
+
+    int p1 = query(Left, b, mid, i, j, carry + tree[node].prop); //প্রপাগেট ভ্যালু বয়ে নিয়ে যাচ্ছে carry ভ্যারিয়েবল
+    int p2 = query(Right, mid + 1, e, i, j, carry + tree[node].prop);
+
+    return p1 + p2;
+}
+```
 
 
 
