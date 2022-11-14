@@ -176,7 +176,9 @@ We are asked to update i=3 to j=5 by an addition of 2 then the array becomes:
 ```
 {4,1,2+2,3+2,9+2,8,7}
 ```
-In this case, from i=3 to j=4 that sum of the values would be 2+2+3+2=9 instead of 2+3=5 as it was earlier. In the earlier cases we just performed update on one index but now the issue of a range of values being updated starts. Note that in a tree the leaf node is the bottom-most nodes and any nodes above the leaf node is an internal node. In a segment tree, the internal nodes have the merged results of the leaf nodes.
+In this case, from i=3 to j=4 that sum of the values would be 2+2+3+2=9 instead of 2+3=5 as it was earlier. In the earlier cases we just performed update on one index but now the issue of a range of values being updated starts. Note that in a tree the leaf node is the bottom-most nodes and any nodes above the leaf node is an internal node.  So what are the contents of the leaf nodes in segment trees. It basically contains the original value of some index. In a segment tree, the internal nodes have the merged results of the leaf nodes. In a segment tree, the range of a node is the indices that have been merged to produce the result. Such as the range for node 3 is 5 to 7 as per the image given below.
+
+![PropagateSegment](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/PropagateSegment.png)
 
 ```cpp
 struct info {
