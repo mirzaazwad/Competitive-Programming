@@ -44,8 +44,14 @@ Now let's observe the array differently, in a different tree like structure:
 
 ![Segment Tree Picture](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/TreeBuild.png)
 
-Observe that its basically the same as the array tree observed earlier but this time we only showed the segments or the ranges. For instance the 3rd node shows a range of 5 to 7.
+Observe that its basically the same as the array tree observed earlier but this time we only showed the segments or the ranges. For instance the 3rd node shows the sum of range from 5 to 7. The numbering of the nodes is essential. The root node is 1 and the node to the left of 1 is:
+> 1*2=2
 
+And the node to the right is:
+
+> 1*2+1=3
+
+Which means that if root is say x, then the left node is 2x and the right node is 2x+1. Now first let's see how this structure is built.
 
 
 ## Initialize the segment tree
