@@ -76,8 +76,11 @@ Then based on the level order indexing we initialise the tree array.
 ```
 
 tree array is used to store the tree or basically the values of the tree. But, 
-###### Why is the tree array 3 times the size of the input array?
-The reason for this is that for n nodes, we should have approximately 2<sup>ceil(log2(n))+1</sup>-1 nodes 
+#### Why is the tree array 3 times the size of the input array?
+The reason for this is that for n nodes, we should have approximately number of nodes, x= 2<sup>ceil(log2(n))+1</sup>-1 nodes. Given our range is at max 10<sup>5</sup> so total number of nodes divided by max range gives us x/10<sup>5</sup> = 2.6 and a ceil value for that is 3 that essentially tells us why we take 3 times the original array for safety provided that the range is upto 10<sup>5</sup>. In some places, you might see 4 times multiplication for more safety in taking an upper bound as 10<sup>5</sup> x 4 = 4 x 10<sup>5</sup> is still less than 10<sup>6</sup> which is acceptable for most competitive programming sites.
+
+
+Now back to init function,
 init function generates the tree from arr. The parameters for init are node, l and r.  Node indicates the current node and l,r indicates the current range. At the beginning we traverse from node 1 and the range from 1 to 7.(Observe the picture of the tree given above). 
 
 Now if l==r is true then we have reached the last node or the leaf node and so the value would be the value stored in the array, so we return that value. Else we split the array into 2 halves. The left node would have an index node*2 and the right node would have an index node*2+1. And the array would be split at the middle.
