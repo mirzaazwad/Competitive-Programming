@@ -180,16 +180,16 @@ In this case, from i=3 to j=4 that sum of the values would be 2+2+3+2=9 instead 
 
 ```cpp
 struct info {
-    i64 prop, sum;
-} tree[mx * 3]; //sum ছাড়াও নিচে অতিরিক্ত কত যোগ হচ্ছে সেটা রাখবো prop এ
-void update(int node, int b, int e, int i, int j, i64 x)
+    long long prop, sum;
+} tree[mx * 3]; //Besides sum the extra values being added below that node is stored in prop
+void update(int node, int b, int e, int i, int j, long long x)
 {
     if (i > e || j < b)
         return;
-    if (b >= i && e <= j) //নোডের রেঞ্জ আপডেটের রেঞ্জের ভিতরে
+    if (b >= i && e <= j) Range of node is within range of update
     {
-        tree[node].sum += ((e - b + 1) * x); //নিচে নোড আছে e-b+1 টি, তাই e-b+1 বার x যোগ হবে এই রেঞ্জে
-        tree[node].prop += x; //নিচের নোডগুলোর সাথে x যোগ হবে
+        tree[node].sum += ((e - b + 1) * x); //There are e-b+1 nodes below, so e-b+1 times x would be added for this range
+        tree[node].prop += x; //Nodes below that would have x added to it
         return;
     }
     int Left = node * 2;
@@ -198,8 +198,8 @@ void update(int node, int b, int e, int i, int j, i64 x)
     update(Left, b, mid, i, j, x);
     update(Right, mid + 1, e, i, j, x);
     tree[node].sum = tree[Left].sum + tree[Right].sum + (e - b + 1) * tree[node].prop;
-    //উপরে উঠার সময় পথের নোডগুলো আপডেট হবে
-    //বাম আর ডান পাশের সাম ছাড়াও যোগ হবে নিচে অতিরিক্ত যোগ হওয়া মান
+    //Backtracking to update the nodes in the path
+    //Even besides left and right side sum extra values below the node would also be added
 }
 ```
 
@@ -211,13 +211,13 @@ int query(int node, int b, int e, int i, int j, int carry = 0)
         return 0;
 
     if (b >= i and e <= j)
-        return tree[node].sum + carry * (e - b + 1); //সাম এর সাথে যোগ হবে সেই রেঞ্জের সাথে অতিরিক্ত যত যোগ করতে বলেছে সেটা
+        return tree[node].sum + carry * (e - b + 1); //The extra values to be added to the range would also be added to the sum
 
     int Left = node << 1;
     int Right = (node << 1) + 1;
     int mid = (b + e) >> 1;
 
-    int p1 = query(Left, b, mid, i, j, carry + tree[node].prop); //প্রপাগেট ভ্যালু বয়ে নিয়ে যাচ্ছে carry ভ্যারিয়েবল
+    int p1 = query(Left, b, mid, i, j, carry + tree[node].prop); propagate value is being propagated by carry
     int p2 = query(Right, mid + 1, e, i, j, carry + tree[node].prop);
 
     return p1 + p2;
