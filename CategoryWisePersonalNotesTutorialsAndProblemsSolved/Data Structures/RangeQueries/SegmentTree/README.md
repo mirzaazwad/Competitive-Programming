@@ -19,7 +19,7 @@ The essence of Divide and Conquer is that it breaks a problem into subproblems a
 
 So essentially now we are going to implement a tree with the following properties:
 * The idea is creating a binary tree.
-* We implement it by breaking the array into 2 equal halves, the range should be  predefined
+* We implement it by breaking the array into 2 halves, basically a divide and conquer approach similar to merge sort. We compute the sum of those halves and utilise that to compute the sum of the segment in O(logn).
 
 The first step of the idea:
 
@@ -75,22 +75,11 @@ int tree[MAX*3];
   }
 ```
 
+tree array is used to store the tree or basically the values of the tree. But, 
+### Why is the tree array 3 times the size of the input array?
+init function generates the tree from arr. The parameters for init are node, l and r.  Node indicates the current node and l,r indicates the current range. At the beginning we traverse from node 1 and the range from 1 to 7.(Observe the picture of the tree given above). 
 
-
-
-
-## References
-
-### Bangla Tutorial for Segment Tree:
-* [Segment Tree Part 1 Basics Bangla](http://www.shafaetsplanet.com/?p=1557)
-* [Segment Tree Part 2 Lazy Propagation Bangla](https://www.shafaetsplanet.com/?p=1591)
-### English Tutorials:
-* [Segment Tree CP Algorithms](https://cp-algorithms.com/data_structures/segment_tree.html)
-* [Segment Tree Codeforces](https://codeforces.com/blog/entry/15890)
-### Tutorial Videos:
-* [Segment Tree Section](https://www.youtube.com/channel/UCozCCU3b1HmcmCf2gLN_7HA/videos)
-
-
+Now if l==r is true then we have reached the last node or the leaf node and so the value would be the value stored in the array, so we return that value. Else we split the array into 2 halves.
 
 
 Then based on the level order indexing we initialise the tree array.
@@ -121,6 +110,25 @@ void update(int node, int l, int r, int i, int newval)
 ```
 
 Essentially, the idea is recursion but the recursion is carried out by pruning some of the branches to make the update process more efficient.
+
+
+
+
+## References
+
+### Bangla Tutorial for Segment Tree:
+* [Segment Tree Part 1 Basics Bangla](http://www.shafaetsplanet.com/?p=1557)
+* [Segment Tree Part 2 Lazy Propagation Bangla](https://www.shafaetsplanet.com/?p=1591)
+### English Tutorials:
+* [Segment Tree CP Algorithms](https://cp-algorithms.com/data_structures/segment_tree.html)
+* [Segment Tree Codeforces](https://codeforces.com/blog/entry/15890)
+### Tutorial Videos:
+* [Segment Tree Section](https://www.youtube.com/channel/UCozCCU3b1HmcmCf2gLN_7HA/videos)
+
+
+
+
+
 
 
 
