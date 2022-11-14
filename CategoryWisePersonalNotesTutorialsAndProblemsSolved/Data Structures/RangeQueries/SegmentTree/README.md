@@ -88,6 +88,8 @@ int mid=(left+right)/2;
 
 As per the mid we break the range into equal halves. Now if we recursively call init for the two sides, we would the sum for the left and right portions. Assuming we computed that, the sum for the current node would be the sum of left and the right nodes. If you have trouble understanding this logic, try to dry run the code on pen and paper.
 
+## Query a Segment Tree
+
 Now let's say we need a query function that can give us the sum for the range from i to j. Let's assume that i=2 and j=6. **Then the aim should be to be obtain the result as the sum of the yellow nodes.**
 
 ![QuerySum](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/QuerySum.png)
@@ -121,11 +123,13 @@ int query(int node, int b, int e, int i, int j)
 ```
 The query function works in a similar way to the init function. Here i,j is basically the required range and b,e is the range of the current node. 
 
+
+
+## Update Function in Segment Tree
+
 Lastly, we have the update operation. The main reason we made the tree instead of using prefix sum. Let's say you are asked to update index 3 with a value of 10. This means that we update the value for the node that has the 3-3 range. Basically the **yellow node in the image given below**. If the node is updated, the values of the **blue nodes will also be updated**. These blue nodes exist in the path to the yellow node. The remaining nodes won't be affected because the node 3 is outside the range of these nodes.
 
 ![SegmentTreePath](https://github.com/mirzaazwad/Competitive-Programming/blob/main/CategoryWisePersonalNotesTutorialsAndProblemsSolved/Data%20Structures/RangeQueries/SegmentTree/SegmentTreePath.png)
-
-## Update Function in Segment Tree
 ```cpp
 void update(int node, int l, int r, int i, int newval)
 {
