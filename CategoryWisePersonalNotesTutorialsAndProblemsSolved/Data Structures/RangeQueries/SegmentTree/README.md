@@ -166,7 +166,19 @@ Due to the array being split into 2, the height of the tree is at max log(n). So
 
 The most elegant function of segment trees comes from the lazy propagation technique. This deals with a range of indices being updated at once. This is a common technique used in most segment tree problems. 
 
-Assume you have an array given of size n.
+Suppose you have an array given of size n and you have to perform queries from i to j index and find the sum of these indices. And for the update operation you have been asked to update the range from i to j by an addition of x.
+
+For instance, if the array is:
+```
+{4, 1, 2, 3, 9, 8, 7}
+```
+We are asked to update i=3 to j=5 by an addition of 2 then the array becomes:
+```
+{4,1,2+2,3+2,9+2,8,7}
+```
+In this case, from i=3 to j=4 that sum of the values would be 2+2+3+2=9 instead of 2+3=5 as it was earlier. In the earlier cases we just performed update on one index but now the issue of a range of values being updated starts.
+
+
 
 
 ## References
