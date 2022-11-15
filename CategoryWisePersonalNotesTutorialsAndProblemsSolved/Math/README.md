@@ -21,3 +21,5 @@ Other Problems to solve:
 7) EOLYMP 1687
 
 8) LOJ Grid Coloring
+
+[Helpful Videos](https://www.youtube.com/playlist?list=PLVMgvCDIRy1x_AmA8lhrPB_plInV_wR8Y)
