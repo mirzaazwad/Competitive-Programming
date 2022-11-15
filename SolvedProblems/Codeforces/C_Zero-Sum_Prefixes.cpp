@@ -40,14 +40,11 @@ namespace Problem
         void takeInput()
         {
             cin >> n;
-            arr.resize(n);
-            prefix.resize(n);
-            for (ll &i : arr)
+            arr.resize(n+1);
+            prefix.resize(n+1);
+            for (int i = 1; i <= n; i++)
             {
-                cin >> i;
-            }
-            for (int i = 0; i < n; i++)
-            {
+                cin>>arr[i];
                 if (!arr[i])
                 {
                     zeros.push_back(i);
@@ -66,12 +63,9 @@ namespace Problem
         void solve()
         { 
             int lenZero = zeros.size();
-            int ans;
-            if(zeros.front()>0){
-                ans=count(prefix.begin(), prefix.begin() + zeros.front()-1, 0);
-            }
-            else{
-                ans=0;
+            int ans=0;
+            for(int i=1;i<zeros.front();i++){
+                ans+=(prefix[i]==0);
             }
             for (int i = 0; i+1 < lenZero; i++)
             {
@@ -79,7 +73,7 @@ namespace Problem
                 int MaxCount = 0;
                 for (int j = zeros[i]; j < zeros[i + 1]; j++)
                 {
-                    if(j<n)mp[prefix[j]]++;
+                    mp[prefix[j]]++;
                     MaxCount = max(MaxCount, mp[prefix[j]]);
                 }
                 ans += MaxCount;
