@@ -40,9 +40,9 @@ namespace Problem
         void takeInput()
         {
             cin >> n;
-            arr.resize(n+1);
-            prefix.resize(n+1);
-            for (int i = 1; i <= n; i++)
+            arr.resize(n);
+            prefix.resize(n);
+            for (int i = 0; i < n; i++)
             {
                 cin>>arr[i];
                 if (!arr[i])
@@ -50,7 +50,7 @@ namespace Problem
                     zeros.push_back(i);
                 }
             }
-            zeros.push_back(n+1);
+            zeros.push_back(n);//deals with the no zero case
             partial_sum(arr.begin(),arr.end(),prefix.begin());
         }
 
@@ -63,10 +63,8 @@ namespace Problem
         void solve()
         { 
             int lenZero = zeros.size();
-            int ans=0;
-            for(int i=1;i<zeros.front();i++){
-                ans+=(prefix[i]==0);
-            }
+            int ans;
+            ans=count(prefix.begin(),prefix.begin()+zeros.front(),0);//iterator end means it stops at end-1;
             for (int i = 0; i+1 < lenZero; i++)
             {
                 map<ll, int> mp;
