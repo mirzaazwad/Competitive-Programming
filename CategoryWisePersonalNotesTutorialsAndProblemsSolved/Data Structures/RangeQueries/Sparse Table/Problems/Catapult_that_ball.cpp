@@ -1,9 +1,6 @@
 // In the name of Allah, The Lord of Mercy, The Giver of Mercy
 // Author: Mirza Mohammad Azwad
 // Institution: Islamic University of Technology
-// #pragma GCC optimize("Ofast")
-// #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-// #pragma GCC optimize("unroll-loops")
 #include <bits/stdc++.h>
 #define ll int64_t
 #define short int16_t
@@ -18,28 +15,29 @@ using namespace std;
 
 namespace Problem
 {
-    class RMQ
+    class RangeMaximumQuery
     {
     private:
-        int SparseTable[17][100005];
+        ll SparseTable[16][50002];
 
     public:
-        RMQ(vector<int> arr, int n)
+        RangeMaximumQuery(vector<ll> arr, int n)
         {
+            clear();
             copy(arr.begin(), arr.end(), SparseTable[0]);
             for (int i = 1; (1 << i) < n; i++)
             {
                 for (int j = 0; j + (1 << i) - 1 < n; j++)
                 {
-                    SparseTable[i][j] = min(SparseTable[i - 1][j], SparseTable[i - 1][j + (1 << (i - 1))]);
+                    SparseTable[i][j] = max(SparseTable[i - 1][j], SparseTable[i - 1][j + (1 << (i - 1))]);
                 }
             }
         }
 
-        int query(int L, int R)
+        ll query(int L, int R)
         {
             int j = (int)log2(R - L + 1);
-            return min(SparseTable[j][L],SparseTable[j][R - (1 << j) + 1]);
+            return max(SparseTable[j][L], SparseTable[j][R - (1 << j) + 1]);
         }
 
         void clear()
@@ -48,59 +46,64 @@ namespace Problem
         }
     };
 
-    //RMQ* rmq=neq RMQ(array,sizeOfArray)
-    //rmq->clear() //clear current rmq
-    //rmq->query(L,R) query from Left to Right
-
     class Program
     {
     private:
-        int N; // size of array
-        int q; // queries
-        int l;//left
-        int r;//right
-        vector<int> arr;
-        RMQ *rmq;
+        int N, M;
+        vector<ll> H;
+        int A, B;
+        RangeMaximumQuery *rmq;
+        int ans;
 
     public:
         Program(int t = 1)
         {
+            ans = 0;
             for (int i = 1; i <= t; i++)
             {
                 takeInput();
-                clearSpace();
             }
         }
 
         void takeInput()
         {
-            cin >> N;
-            arr.resize(N);
-            for (int &i : arr)
+            cin >> N >> M;
+            H.resize(N + 1);
+            for (int i = 1; i <= N; i++)
             {
-                cin >> i;
+                cin >> H[i];
             }
-            rmq =new RMQ(arr, N);
-            cin >> q;
-            for (int i = 0; i < q; i++)
+            rmq = new RangeMaximumQuery(H, N + 1);
+            for (int i = 0; i < M; i++)
             {
-                solve();
+                cin >> A >> B;
+                solve(min(A,B), max(A,B));
             }
+            cout << ans << endl;
         }
 
-        void clearSpace()
-        {
-            arr.clear();
-            rmq->clear();
+        void clearSpace(){
+            H.clear();
         }
-        void solve()
+
+        void solve(int A, int B)
         {
-            cin>>l>>r;
-            cout << rmq->query(l, r) << endl;
+
+            if (abs(A - B) <= 1)
+            {
+                ans++;
+            }
+            else
+            {
+                ll query = rmq->query(A + 1, B - 1);
+                if (query <= H[A])
+                {
+                    ans++;
+                }
+            }
         }
     };
 }
-
 signed main()
 {
     fastio;
