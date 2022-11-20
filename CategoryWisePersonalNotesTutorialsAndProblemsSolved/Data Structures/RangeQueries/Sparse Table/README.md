@@ -223,7 +223,7 @@ int query(int L, int R)
 
 ## Some Practice Problems:
 <ul>
-<li><a href="http://www.spoj.com/problems/RMQSQ/">SPOJ - RMQSQ</a></li>
+  <li><s><a href="http://www.spoj.com/problems/RMQSQ/">SPOJ - RMQSQ</a></s></li>
 <li><a href="http://www.spoj.com/problems/THRBL/">SPOJ - THRBL</a></li>
 <li><a href="https://www.codechef.com/problems/MSTICK">Codechef - MSTICK</a></li>
 <li><a href="https://www.codechef.com/problems/SEAD">Codechef - SEAD</a></li>
