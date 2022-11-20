@@ -143,9 +143,6 @@ To implement a sparse table for RMQ:
           //First row remains as it is
             copy(arr.begin(), arr.end(), SparseTable[0]);
             // Compute values for remaining intervals of the power of 2
-            for (int i = 0; i < n; i++)
-            {
-            }
             for (int i = 1; (1 << i) < n; i++)
             {
                 for (int j = 0; j + (1 << i) - 1 < n; j++)
