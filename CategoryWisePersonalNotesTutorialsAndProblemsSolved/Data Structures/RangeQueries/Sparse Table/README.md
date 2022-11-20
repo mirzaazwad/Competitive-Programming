@@ -234,7 +234,6 @@ int query(int L, int R)
 <li><a href="http://codeforces.com/problemset/problem/514/D">Codeforces - R2D2 and Droid Army</a></li>
 <li><a href="http://codeforces.com/problemset/problem/872/B">Codeforces - Maximum of Maximums of Minimums</a></li>
 <li><a href="http://www.spoj.com/problems/TNVFC1M/">SPOJ - Miraculous</a></li>
-<li><a href="http://web.archive.org/web/20200922003506/https://devskill.com/CodingProblems/ViewProblem/19">DevSkill - Multiplication Interval (archived)</a></li>
 <li><a href="http://codeforces.com/contest/713/problem/D">Codeforces - Animals and Puzzles</a></li>
 <li><a href="http://codeforces.com/contest/675/problem/E">Codeforces - Trains and Statistics</a></li>
 <li><a href="http://www.spoj.com/problems/POSTERIN/">SPOJ - Postering</a></li>
