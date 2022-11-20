@@ -160,7 +160,7 @@ To implement a sparse table for RMQ:
             int j = (int)log2(R - L + 1);
             // Compute minimum of last 2^j elements with first
             // 2^j elements in range.
-            // For [2, 10], we compare arr[SparseTable[0][3]] and
+            // For [2, 10], we compare arr[SparseTable[3][0]] and
             // arr[SparseTable[3][3]],
             return min(SparseTable[j][L],SparseTable[j][R - (1 << j) + 1]);
         }
