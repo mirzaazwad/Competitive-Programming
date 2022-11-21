@@ -17,6 +17,10 @@ This is the repository where I outline my competitive programming experiences an
 
 [Competitive Programming-3](https://drive.google.com/file/d/17FlWGk0NLfIEY21MN-cS-PNj_fGvjSmm/view?usp=sharing)
 
+[Bangla Programming Resource](https://github.com/me-shaon/bangla-programming-resources)
+
+[Shafayets Blog Bangla Resource](https://www.shafaetsplanet.com/)
+
 ###### Programming Practice Lists:
 
 [Junior Training Sheet v7](https://docs.google.com/spreadsheets/d/1iJZWP2nS_OB3kCTjq8L6TrJJ4o-5lhxDOyTaocSYc-k/edit?usp=sharing)

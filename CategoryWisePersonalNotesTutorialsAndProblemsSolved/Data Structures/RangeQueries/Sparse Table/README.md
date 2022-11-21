@@ -160,7 +160,7 @@ To implement a sparse table for RMQ:
             int j = (int)log2(R - L + 1);
             // Compute minimum of last 2^j elements with first
             // 2^j elements in range.
-            // For [2, 10], we compare arr[SparseTable[0][3]] and
+            // For [2, 10], we compare arr[SparseTable[3][0]] and
             // arr[SparseTable[3][3]],
             return min(SparseTable[j][L],SparseTable[j][R - (1 << j) + 1]);
         }
@@ -223,8 +223,8 @@ int query(int L, int R)
 
 ## Some Practice Problems:
 <ul>
-<li><a href="http://www.spoj.com/problems/RMQSQ/">SPOJ - RMQSQ</a></li>
-<li><a href="http://www.spoj.com/problems/THRBL/">SPOJ - THRBL</a></li>
+  <li><s><a href="http://www.spoj.com/problems/RMQSQ/">SPOJ - RMQSQ</a></s></li>
+  <li><s><a href="http://www.spoj.com/problems/THRBL/">SPOJ - THRBL</a></s></li>
 <li><a href="https://www.codechef.com/problems/MSTICK">Codechef - MSTICK</a></li>
 <li><a href="https://www.codechef.com/problems/SEAD">Codechef - SEAD</a></li>
 <li><a href="http://codeforces.com/contest/475/problem/D">Codeforces - CGCDSSQ</a></li>
