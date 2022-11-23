@@ -22,7 +22,6 @@ namespace Problem
         int binary[105][105];
         set<int> sets[105];
         vector<int> roots;
-        vector<int> in_degree;
         int n;
 
     public:
@@ -59,8 +58,7 @@ namespace Problem
             cin >> n;
             roots.clear();
             memset(binary, 0, sizeof(binary));
-            in_degree.assign(n+1, 0);
-            for (int i = 0; i < 105; i++)
+            for (int i = 1; i <= n; i++)
             {
                 adj[i].clear();
                 sets[i].clear(); 
@@ -83,12 +81,8 @@ namespace Problem
 
         void solve()
         {
-            for (int i = 1; i <= n; i++)
-            {
-                if (in_degree[i] == 0)
-                {
-                    roots.push_back(i);
-                }
+            for(int i=1;i<=n;i++){
+                roots.push_back(i);
             }
             for (auto i : roots)
             {
