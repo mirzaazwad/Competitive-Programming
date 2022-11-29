@@ -55,18 +55,18 @@ int main()
 
 The second version of this algorithm takes into account the cases when the hash value matches but the substring isn't necessarily the same. First we check if the hash value matches and then we check as to whether the substring itself matches.
 ```cpp
-
+// See Abdul Bari Sir's video to understand the concept of rolling hash clearly
 void RabinKarp(string txt, int txt_len, string pat, int pat_len, int base)
 {
     unsigned int pat_hash = 0;
     unsigned int txt_hash = 0;
     unsigned int curr_hash = 1;
-    for (int i = 0; i < pat_len - 1; i++)
+    for (int i = 0; i < pat_len - 1; i++)//also used for rolling hash, basically this gives Base^(pat_len-1), this is used to calculate hash for the //segment and this hash is moved in every segment
     {
         curr_hash = curr_hash * base;
     }
 
-    for (int i = 0; i < pat_len; i++)
+    for (int i = 0; i < pat_len; i++)//finding the hash for the first window, or segment as well as the hash for pattern //to be searched
     {
         pat_hash = (base * pat_hash + pat[i]);
         txt_hash = (base * txt_hash + txt[i]);
@@ -79,7 +79,7 @@ void RabinKarp(string txt, int txt_len, string pat, int pat_len, int base)
             int j;
             for (j = 0; j < pat_len; j++)
             {
-                if (txt[i + j] != pat[j])
+                if (txt[i + j] != pat[j])//dealing with cases when the hash value of 2 strings are the same but the //strings aren't the same
                 {
                     break;
                 }
@@ -93,7 +93,7 @@ void RabinKarp(string txt, int txt_len, string pat, int pat_len, int base)
 
         if (i < txt_len - pat_len)
         {
-            txt_hash = (base * (txt_hash - txt[i] * curr_hash) + txt[i + pat_len]);
+            txt_hash = (base * (txt_hash - txt[i] * curr_hash) + txt[i + pat_len]);//this is the idea of rolling hash
         }
     }
     cout << "Not Found" << endl;
