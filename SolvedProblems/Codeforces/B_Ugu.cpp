@@ -38,25 +38,22 @@ namespace Problem{
                 
             }
             void solve(){
-                int len=str.length();
-                int i=len-1;
-                int start=0;
-                for(int i=0;i<len;i++){
-                    if(str[i]=='1'){
-                        start=i;
-                        break;
+                int leftmostZeros=0;
+                for(int i=0;i<n;i++){
+                    if(str[i]=='0'){
+                        leftmostZeros++;
                     }
+                    else break;
                 }
-                bool found=false;
-                int end=len-1;
-                while(str[end]=='1')end--;
-                for(int i=end;i>=0;i--){
-                    if(str[i]=='1'){
-                        end=i;
-                        break;
-                    }
+                if(leftmostZeros==n){
+                    cout<<0<<endl;
+                    return;
                 }
-                cout<<abs(end-start)<<endl;
+                int count=0;
+                for(int i=leftmostZeros+1;i<n;i++){
+                    count+=(str[i]!=str[i-1]);//the number of zeros in between the leftmost one and end needs to be replaced
+                }
+                cout<<count<<endl;
 
             }
     };
