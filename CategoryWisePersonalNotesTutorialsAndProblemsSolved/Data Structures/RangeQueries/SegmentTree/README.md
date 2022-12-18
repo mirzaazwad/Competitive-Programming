@@ -61,7 +61,7 @@ int tree[MAX*3];
    }
    int left=node*2;
    int right=left+1;
-   int mid=(left+right)/2;
+   int mid=(l+r)/2;
    init(left,l,mid);
    init(right,mid+1,r);
    tree[node] = tree[l] + tree[r];
@@ -87,7 +87,7 @@ Now if l==r is true then we have reached the last node or the leaf node and so t
 The first step of the idea:
 
 ```cpp
-int mid=(left+right)/2;
+int mid=(l+r)/2;
 ```
 
 As per the mid we break the range into equal halves. Now if we recursively call init for the two sides, we would the sum for the left and right portions. Assuming we computed that, the sum for the current node would be the sum of left and the right nodes. If you have trouble understanding this logic, try to dry run the code on pen and paper.
@@ -146,7 +146,7 @@ void update(int node, int l, int r, int i, int newval)
   }
   int left=2*node;
   int right=left+1;
-  int mid=(left+right)/2;
+  int mid=(l+r)/2;
   update(left,l,mid,i,newval);
   update(right,mid+1,r,i,newVal);
   tree[node]=tree[left]+tree[right];
