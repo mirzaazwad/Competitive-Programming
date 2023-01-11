@@ -14,6 +14,7 @@
     "utility": "cpp",
     "complex": "cpp",
     "cstdlib": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "random": "cpp"
   }
 }
