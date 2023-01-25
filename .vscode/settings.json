@@ -1,5 +1,6 @@
 {
   "files.associations": {
+    "*.embeddedhtml": "html",
     "chrono": "cpp",
     "deque": "cpp",
     "format": "cpp",
@@ -19,6 +20,14 @@
     "*.tcc": "cpp",
     "functional": "cpp",
     "string": "cpp",
-    "rope": "cpp"
+    "rope": "cpp",
+    "tuple": "cpp",
+    "array": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "string_view": "cpp",
+    "regex": "cpp",
+    "valarray": "cpp",
+    "climits": "cpp"
   }
 }
