@@ -28,6 +28,8 @@
     "string_view": "cpp",
     "regex": "cpp",
     "valarray": "cpp",
-    "climits": "cpp"
+    "climits": "cpp",
+    "bitset": "cpp",
+    "algorithm": "cpp"
   }
 }
