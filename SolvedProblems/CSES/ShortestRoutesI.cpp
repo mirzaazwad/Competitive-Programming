@@ -44,7 +44,6 @@ int main(void)
     adj[a].emplace_back(c, b);
   }
   dijkstra();
-  
   cout << endl;
   return 0;
 }
