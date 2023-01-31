@@ -1,32 +1,35 @@
 class Solution {
 public:
-    int bfs(int n){
-        vector<int>sqList;
-        queue<int>q;
-        vector<int>dis(n+1,INT_MAX);
-        for(int i=1;i*i<=n;i++){
-            sqList.push_back(i*i);
-            q.push(i*i);
-            dis[i*i]=1;
+    bool vis[105][105];
+    int n,m;
+    int dfs(int sx,int sy,vector<vector<int>>& grid){
+        int dirx[]={0,0,-1,1};
+        int diry[]={-1,1,0,0};
+        if(sx<0 || sx>n-1 || sy<0 || sy>m-1){
+            return 1;
         }
-        while(!q.empty()){
-            int tmp=q.front();
-            q.pop();
-            for(auto u:sqList){
-                int nextVal=tmp+u;
-                if(nextVal>n)continue;
-                if(dis[tmp]+1<dis[nextVal]){
-                    dis[nextVal]=dis[tmp]+1;
-                    q.push(nextVal);
+        if(vis[sx][sy])return 0;
+        if(grid[sx][sy]==0)return 1;
+        vis[sx][sy]=true;
+        int ret=0;
+        for(int i=0;i<4;i++){
+            int x=sx+dirx[i];
+            int y=sy+diry[i];
+            ret+=dfs(x,y,grid);
+        }
+        return ret;
+    }
+    int islandPerimeter(vector<vector<int>>& grid) {
+        memset(vis,false,sizeof(vis));
+        n=grid.size();
+        m=grid.front().size();
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(grid[i][j]==1){
+                    return dfs(i,j,grid);
                 }
             }
-            
         }
-        return dis[n];
-
-    }
-
-    int numSquares(int n) {
-        return bfs(n);
+        return 0;
     }
 };
