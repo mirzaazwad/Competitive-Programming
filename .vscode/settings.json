@@ -32,6 +32,7 @@
     "bitset": "cpp",
     "algorithm": "cpp",
     "iterator": "cpp",
-    "iomanip": "cpp"
+    "iomanip": "cpp",
+    "ostream": "cpp"
   }
 }
