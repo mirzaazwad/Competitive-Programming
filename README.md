@@ -21,6 +21,7 @@ This is the repository where I outline my competitive programming experiences an
 
 [Shafayets Blog Bangla Resource](https://www.shafaetsplanet.com/)
 
+
 ###### Programming Practice Lists:
 
 [Junior Training Sheet v7](https://docs.google.com/spreadsheets/d/1iJZWP2nS_OB3kCTjq8L6TrJJ4o-5lhxDOyTaocSYc-k/edit?usp=sharing)
