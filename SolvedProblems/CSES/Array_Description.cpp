@@ -1,70 +1,60 @@
-//In the name of Allah, The Lord of Mercy, The Giver of Mercy
-//Author: Mirza Mohammad Azwad
-//Institution: Islamic University of Technology
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
-#include <bits/stdc++.h> 
-#define ll int64_t
-#define short int16_t
-#define int int32_t
+#include <bits/stdc++.h>
+
+#define fastio                        \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL)
+
 #define endl "\n"
- 
+#define ll long long
 using namespace std;
-#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
- 
- 
-
-namespace Problem{
-    class Program{
-        private:
-            vector<int>arr;
-            int n,m;
-            const ll mod= 1e9 + 7;
-        public:
-            int countSubArray(){
-                int max_start=0;
-                int count=0;
-                int max_end=0;
-                for(int i=1;i<n;i++){
-                    int max_len=max_end-max_start;
-                    count+=(max_len*(max_len+1))/2;
-                    if(abs(arr[i-1]-arr[i])>1){
-                        max_end=i-max_start;
-                        max_start=i;
-                        count+=((max_end*(max_end+1))/2);
-                    }
-                }
-                int max_len=max_end-max_start;
-                count+=(max_len*(max_len+1))/2;
-                return count;
-            }
-
-            Program(int t=1){
-                for(int i=1;i<=t;i++){
-                    takeInput();
-                    solve();
-                    clearSpace();
-                }
-            }
- 
-            void takeInput(){
-                cin>>n>>m;
-                arr.resize(n);
-                for(int &i:arr)cin>>i;
-            }
- 
-            void clearSpace(){
-                arr.clear();
-            }
-            void solve(){
-                cout<<countSubArray()<<endl;
-            }
-    };
-}
-signed main()
+const ll MOD = 1e9 + 7;
+ll dp[100001][101];
+int main()
 {
     fastio;
-    Problem::Program program=Problem::Program();
+    int n, m;
+    cin >> n >> m;
+    vector<ll> arr(n);
+    for (ll &i : arr)
+        cin >> i;
+    if (arr[0] == 0)
+    {
+        fill(dp[0], dp[0] + 101, 1);
+    }
+    else
+    {
+        dp[0][arr[0]] = 1;
+    }
+    for (int i = 1; i < n; i++)
+    {
+        if (arr[i] == 0)
+        {
+            for (int j = 1; j <= m; j++)
+            {
+                dp[i][j] += dp[i - 1][j];
+                if (j - 1 > 0)
+                    dp[i][j] += dp[i - 1][j - 1];
+                if (j + 1 <= m)
+                    dp[i][j] += dp[i - 1][j + 1];
+                dp[i][j] %= MOD;
+            }
+        }
+        else
+        {
+            dp[i][arr[i]] += dp[i - 1][arr[i]];
+            if (arr[i] - 1 > 0)
+                dp[i][arr[i]] += dp[i - 1][arr[i] - 1];
+            if (arr[i] + 1 <= m)
+                dp[i][arr[i]] += dp[i - 1][arr[i] + 1];
+            dp[i][arr[i]] % MOD;
+        }
+    }
+    ll ans = 0;
+    for (int i = 1; i <= m; i++)
+    {
+        ans += dp[n - 1][i];
+        ans %= MOD;
+    }
+    cout << ans << endl;
     return 0;
 }
