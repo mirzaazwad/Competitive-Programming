@@ -8,14 +8,14 @@ public:
     vector<int>adj[graph.size()];
     for(int i=0;i<graph.size();i++){
       for(auto u:graph[i]){
-        adj[i].push_back(u);
-        indegree[u]++;
+        adj[u].push_back(i);
+        indegree[i]++;
       }
     }
     queue<int>q;
     vector<int>ans;
     for(int i=0;i<graph.size();i++){
-      if(indegree[i]==0){
+      if(!indegree[i]){
         q.push(i);
       }
     }
