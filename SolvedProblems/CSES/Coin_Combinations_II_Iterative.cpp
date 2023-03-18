@@ -35,11 +35,9 @@ int main()
     dp.assign(m+5,0);
     for(ll &i:coins)cin>>i;
     dp[0]=1;
-    for(int i=1;i<=m;i++){
-      for(int j=0;j<n;j++){
-        if(i-coins[j]>=0){
-          dp[i]+=dp[i-coins[j]]%((ll)(1e9+7));
-        }
+    for(int i=0;i<n;i++){
+      for(int j=coins[i];j<=m;j++){
+        dp[j]+=dp[j-coins[i]]%((ll)(1e9+7));
       }
     }
     cout<<dp[m]%((ll)(1e9+7))<<endl;

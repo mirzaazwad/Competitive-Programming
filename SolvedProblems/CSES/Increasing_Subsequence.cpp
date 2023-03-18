@@ -13,18 +13,18 @@ int main()
     fastio;
     int n;
     cin>>n;
-    vector<ll>dp;
+    vector<ll>v(n);
+    for(ll &i:v)cin>>i;
+    vector<ll>ans;
     for(int i=0;i<n;i++){
-        ll x;
-        cin>>x;
-        auto it=lower_bound(dp.begin(),dp.end(),x);
-        if(it==dp.end()){
-            dp.push_back(x);
-        }
-        else{
-            *it=x;
-        }
+      int ix=lower_bound(ans.begin(),ans.end(),v[i])-ans.begin();
+      if(ix==ans.size()){
+        ans.push_back(v[i]);
+      }
+      else{
+        ans[ix]=v[i];
+      }
     }
-    cout<<dp.size()<<endl;
+    cout<<ans.size()<<endl;
     return 0;
 }
