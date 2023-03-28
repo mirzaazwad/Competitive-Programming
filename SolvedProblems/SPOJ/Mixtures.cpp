@@ -1,39 +1,57 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fastio                        \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL)
-
+#define fastio                      \
+  ios_base::sync_with_stdio(false); \
+  cin.tie(NULL)
+#define N 105
 #define endl "\n"
+#define ll long long
+ll color[N][N];
+ll smoke[N][N];
 
-int main()
+ll MCM(int i, int j)
+{
+  if (i == j)
+  {
+    return 0;
+  }
+  if (smoke[i][j] != -1)
+  {
+    return smoke[i][j];
+  }
+  smoke[i][j] = INT_MAX;
+  for (int k = i; k < j; k++)
+  {
+    smoke[i][j] = min(smoke[i][j], color[i][k] * color[k + 1][j] + MCM(i, k) + MCM(k + 1, j));
+  }
+  return smoke[i][j];
+}
+
+int main(void)
 {
   fastio;
-  int no, color[105][105], smoke[105][105], s[105][105];
-  while (cin>>no)
+  int n;
+  cin >> n;
+  memset(color, 0, sizeof(color));
+  memset(smoke, -1, sizeof(smoke));
+  vector<ll> colors(n);
+  for (ll &i : colors)
+    cin >> i;
+  for (int i = 0; i < n; i++)
   {
-    int i, k, j, l, temp;
-    for (i = 0; i < no; i++)
+    for (int j = 0; j < n; j++)
     {
-      cin>>color[i][i];
+      if (i == j)
+        color[i][i] = colors[i];
     }
-    for (l = 2; l <= no; l++)
-      for (i = 0; i < no - l + 1; i++)
-      {
-        j = i + l - 1;
-        int min = INT_MAX;
-        for (k = i; k <= j - 1; k++)
-        {
-          temp = smoke[i][k] + smoke[k + 1][j] + color[i][k] * color[k + 1][j];
-          if (temp < min)
-          {
-            color[i][j] = (color[i][k] + color[k + 1][j]) % 100;
-            min = temp;
-            smoke[i][j] = min;
-          }
-        }
-      }
-    int ans;
-    cout<<smoke[0][no-1]<<endl;
   }
+  for (int i = 0; i < n; i++)
+  {
+    for (int j = i + 1; j < n; j++)
+    {
+      color[i][j] = color[i][j - 1] + colors[j];
+      color[i][j] = color[i][j] % 100;
+    }
+  }
+  cout << MCM(0, n - 1) << endl;
 }
