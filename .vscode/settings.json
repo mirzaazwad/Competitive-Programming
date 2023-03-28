@@ -4,6 +4,14 @@
     "iostream": "cpp",
     "cmath": "cpp",
     "random": "cpp",
-    "complex": "cpp"
+    "complex": "cpp",
+    "*.tcc": "cpp",
+    "deque": "cpp",
+    "list": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "vector": "cpp",
+    "rope": "cpp"
   }
 }
