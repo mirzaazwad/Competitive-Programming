@@ -24,7 +24,6 @@ int main()
   fastio;
   ll n, r;
   cin >> n >> r;
-  memset(dp, -1, sizeof(dp));
   ll ans = 0;
   if (r >= 2)
     ans += ncr(n, 2);
